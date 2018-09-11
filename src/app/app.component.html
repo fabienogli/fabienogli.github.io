@@ -1,7 +1,9 @@
-<h1>Bienvenue sur mon {{ title }}</h1>
-<nav>
-  <a routerLink="/">Accueil</a>
-  <br>
-  <a routerLink="/projet">Projets</a>
+
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+    <div class="container">
+        <a class="navbar-brand">Angular Router</a>
+        <a class="nav-link" routerLink="/dashboard">Home</a>
+        <a class="nav-link" routerLink="/projet">Projet</a>
+        </div>
 </nav>
 <router-outlet></router-outlet>
