@@ -34,7 +34,7 @@ export default {
 
   .logo {
     float: left;
-    height: 150px;
+    height: 100px;
   }
   .container {
     display: flex;
