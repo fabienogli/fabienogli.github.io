@@ -22,7 +22,6 @@
 
 <script>
 import text from '@/texts/nav.js'
-console.log(text)
 export default {
   name: "NavBar",
   data() {

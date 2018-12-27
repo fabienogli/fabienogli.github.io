@@ -8,34 +8,48 @@
         <div class="name">{{headline}}</div>
       </div>
     </div>
-    <div class="about-content">
-      {{content}}
-    </div>
+    <div class="about-content">{{content[lang]}}</div>
   </div>
 </template>
 
 <script>
-import text from "@/texts/about";
+import text from "@/texts/about"
+import { clearInterval } from 'timers';
 export default {
   name: "About",
   data() {
     return {
-      text: text,
-    }
+      headline: "",
+      content: text.content,
+      interval: "",
+    };
   },
   computed: {
-    content() {
-      var lang = this.$store.getters['lang/get']
-      return text.content[lang]
-    },
-    headline() {
-      var lang = this.$store.getters['lang/get']
-      return text.headline[lang]
+    lang() {
+      if (this.interval !== "") {
+        window.clearInterval(this.interval)
+      }
+      this.interval = this.writeHeadline()
+      return this.$store.getters["lang/get"]
     }
   },
   methods: {
-    getLang() {
-      // console.log(text.content[this.lang])
+    writeHeadline() {
+      let lang = this.$store.getters["lang/get"]
+      let headline = text.headline[lang];
+      this.headline = "";
+      if (headline === undefined) {
+        return;
+      }
+      let i = 0;
+      let interval = setInterval(() => {
+        this.headline += headline.charAt(i)
+        i++
+      }, 100)
+      if (i === headline.length) {
+        clearInterval(interval)
+      }
+      return interval
     }
   }
 };
@@ -52,7 +66,6 @@ export default {
 .about-content {
   color: $onPrimary;
   font-size: 32px;
-  text-align: justify; 
 }
 
 .presentation {
@@ -71,7 +84,6 @@ export default {
     .name {
       color: #f6db7b;
       font-size: 50px;
-      text-align: justify
     }
   }
 }
