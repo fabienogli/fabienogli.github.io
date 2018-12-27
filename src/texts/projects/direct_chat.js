@@ -1,6 +1,9 @@
 export default {
   id: 3,
-  title: "Chat",
-  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut ornare elit. Nulla lobortis at.",
+  title: "Direct Chat",
+  content: {
+    en: "Direct Chat is an instant chat using a peer to peer communication",
+    fr: "Ce projet est un messsagerie utilisant une communication pair à pair.",
+  },
   logos: ['javascript', 'go']
 }

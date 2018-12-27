@@ -1,6 +1,9 @@
 export default {
   id: 1,
   title: "CoWorkshop",
-  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut ornare elit. Nulla lobortis at.",
+  content: {
+    en: "CoWorkshop is a web solution which allow the user to participate and share his projects.",
+    fr: "CoWorkshop est une solution web permettant de participer et de proposer des projets.",
+  },
   logos: ['javascript', 'ruby']
 }

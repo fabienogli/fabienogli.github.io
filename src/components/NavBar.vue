@@ -1,6 +1,6 @@
 <template>
   <div class="navBar">
-    <select v-model="lang" @change="setLang()">
+    <select class="lang" v-model="lang" @change="setLang()">
       <option value="fr">FR</option>
       <option value="en">EN</option>
     </select>
@@ -27,7 +27,7 @@ export default {
   name: "NavBar",
   data() {
     return {
-      lang: "en",
+      lang: "fr",
       contact: text.contact,
       projects: text.projects,
       about: text.about,
@@ -48,9 +48,27 @@ export default {
 <style lang="scss" scoped>
 @import "~@/styles/_variables";
 
+.lang {
+  position: absolute;
+  height: 25px;
+  right: 15px;
+  top: 55px;
+  background-color: $primaryColor;
+  color: $onPrimary;
+  stroke: none;
+  .select-hidden {
+    display: none;
+  visibility: hidden;
+  padding-right: 10px;
+  }
+}
 .navBar {
+  margin-left: 5%;
+  margin-right: 5%;
+
   .logo {
-    float: left;
+    position: absolute;
+    left: 5px;
     height: 100px;
   }
   .container {

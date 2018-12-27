@@ -5,10 +5,10 @@
       {{ title }}
       </div>
       <div class="summary">
-        {{summary}}
+        {{summary[lang]}}
       </div>
       <div class="logos">
-        <div class="logo" v-for="logo in logos">
+        <div class="logo" v-for="logo in logos" :key="logo">
           <img class="img" :src="require('@/assets/icons/' + logo + '.svg')"/>
         </div>
       </div>
@@ -24,6 +24,11 @@ export default {
   data () {
     return {
       msg: 'Card Component',
+    }
+  },
+  computed: {
+    lang() {
+      return this.$store.getters['lang/get']
     }
   }
 }
