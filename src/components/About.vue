@@ -5,18 +5,39 @@
         <img src="@/assets/moi.png">
       </div>
       <div class="name-container">
-        <div class="name">Fabien Ogli</div>
+        <div class="name">{{headline}}</div>
       </div>
     </div>
-    <div
-      class="about-content"
-    >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra eget tortor eget varius. Phasellus ante mauris, cursus ut augue sed, suscipit mollis metus. Morbi.</div>
+    <div class="about-content">
+      {{content}}
+    </div>
   </div>
 </template>
 
 <script>
+import text from "@/texts/about";
 export default {
   name: "About",
+  data() {
+    return {
+      text: text,
+    }
+  },
+  computed: {
+    content() {
+      var lang = this.$store.getters['lang/get']
+      return text.content[lang]
+    },
+    headline() {
+      var lang = this.$store.getters['lang/get']
+      return text.headline[lang]
+    }
+  },
+  methods: {
+    getLang() {
+      // console.log(text.content[this.lang])
+    }
+  }
 };
 </script>
 
@@ -49,7 +70,8 @@ export default {
     justify-content: center;
     .name {
       color: #f6db7b;
-      font-size: 72px;
+      font-size: 50px;
+      text-align: justify
     }
   }
 }

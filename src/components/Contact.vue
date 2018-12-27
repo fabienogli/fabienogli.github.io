@@ -1,20 +1,49 @@
 <template>
   <div class="contact">
     <div class="container">
-      <img src="@/assets/icons/github.svg">
+      <a target="_blank" href="https://github.com/fabienogli">
+        <img src="@/assets/icons/github.svg">
+        <div class="content">
+          {{github[lang]}}
+        </div>
+      </a>
     </div>
     <div class="container">
-      <img src="@/assets/icons/linkedin.svg">
+      <a target="_blank" href="https://www.linkedin.com/in/fabien-ogli/">
+        <img src="@/assets/icons/linkedin.svg">
+        <div class="content">
+          {{linkedin[lang]}}
+        </div>
+      </a>
     </div>
     <div class="container">
-      <img src="@/assets/icons/mail.svg">
+      <a href="mailto:fabien.ogli@gmail.com">
+        <img src="@/assets/icons/mail.svg">
+        <div class="content">
+          {{mail[lang]}}
+        </div>
+      </a>
     </div>
   </div>
 </template>
 
 <script>
+import text from '@/texts/contact'
+
 export default {
-  name: "Contact"
+  name: "Contact",
+  data() {
+    return {
+      github: text.github,
+      linkedin: text.linkedin,
+      mail: text.mail,
+    }
+  },
+  computed: {
+    lang() {
+      return this.$store.getters['lang/get']
+    }
+  }
 };
 </script>
 
@@ -29,6 +58,11 @@ export default {
   justify-content: center;
 }
 
+a {
+  text-decoration: none;
+  color: $onPrimary;
+  font-size: 25px;
+}
 .container {
   flex: 1;
   padding: 40px;

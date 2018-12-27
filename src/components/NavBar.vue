@@ -1,27 +1,45 @@
 <template>
   <div class="navBar">
+    <select v-model="lang" @change="setLang()">
+      <option value="fr">FR</option>
+      <option value="en">EN</option>
+    </select>
+    
     <img class="logo" src="@/assets/logo.png">
     <ul class="container">
       <li class="li-link">
-        <router-link class="link" active-class="active" :to="{ name: 'about' }">About</router-link>
+        <router-link class="link" active-class="active" :to="{ name: 'about' }">{{about[lang]}}</router-link>
       </li>
       <li class="li-link">
-        <router-link class="link" active-class="active" :to="{ name: 'projects' }">Projects</router-link>
+        <router-link class="link" active-class="active" :to="{ name: 'projects' }">{{projects[lang]}}</router-link>
       </li>
       <li class="li-link">
-        <router-link class="link" active-class="active" :to="{ name: 'contact' }">Contact</router-link>
+        <router-link class="link" active-class="active" :to="{ name: 'contact' }">{{contact[lang]}}</router-link>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import text from '@/texts/nav.js'
+console.log(text)
 export default {
   name: "NavBar",
   data() {
     return {
-      msg: "Welcome to Your Vue.js App"
+      lang: "en",
+      contact: text.contact,
+      projects: text.projects,
+      about: text.about,
     };
+  },
+  methods: {
+    setLang() {
+      this.$store.dispatch("lang/setLang", this.lang)
+    }
+  },
+  mounted() {
+    this.setLang()
   }
 };
 </script>
@@ -31,7 +49,6 @@ export default {
 @import "~@/styles/_variables";
 
 .navBar {
-
   .logo {
     float: left;
     height: 100px;
@@ -64,9 +81,11 @@ export default {
     &:hover:after {
       transform: translateX(-50%) scaleX(1);
     }
-  }
-  .router-link-exact-active.active:after {
-      transform: translateX(-50%) scaleX(1);
+    &.router-link-exact-active {
+      &:after {
+        transform: translateX(-50%) scaleX(1);
+      }
+    }
   }
 }
 </style>
