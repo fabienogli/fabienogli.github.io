@@ -1,27 +1,37 @@
 <template>
   <div class="navBar">
-    <select class="lang" v-model="lang" @change="setLang()">
-      <option value="fr">FR</option>
-      <option value="en">EN</option>
-    </select>
-    
     <img class="logo" src="@/assets/logo.png">
-    <ul class="container">
+    <div class="menu" @click="collapsed = !collapsed">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+        <path d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+      </svg>
+      Menu
+    </div>
+    <ul class="container" :class="{'show': collapsed}">
       <li class="li-link">
         <router-link class="link" active-class="active" :to="{ name: 'about' }">{{about[lang]}}</router-link>
       </li>
       <li class="li-link">
-        <router-link class="link" active-class="active" :to="{ name: 'projects' }">{{projects[lang]}}</router-link>
+        <router-link
+          class="link"
+          active-class="active"
+          :to="{ name: 'projects' }"
+        >{{projects[lang]}}</router-link>
       </li>
       <li class="li-link">
         <router-link class="link" active-class="active" :to="{ name: 'contact' }">{{contact[lang]}}</router-link>
       </li>
     </ul>
+    <select class="lang" v-model="lang" @change="setLang()">
+      <option value="fr">FR</option>
+      <option value="en">EN</option>
+    </select>
   </div>
 </template>
 
 <script>
-import text from '@/texts/nav.js'
+import text from "@/texts/nav.js";
 export default {
   name: "NavBar",
   data() {
@@ -30,15 +40,19 @@ export default {
       contact: text.contact,
       projects: text.projects,
       about: text.about,
+      collapsed: false,
     };
   },
   methods: {
     setLang() {
-      this.$store.dispatch("lang/setLang", this.lang)
+      this.$store.dispatch("lang/setLang", this.lang);
+    },
+    toggle() {
+
     }
   },
   mounted() {
-    this.setLang()
+    this.setLang();
   }
 };
 </script>
@@ -57,8 +71,8 @@ export default {
   stroke: none;
   .select-hidden {
     display: none;
-  visibility: hidden;
-  padding-right: 10px;
+    visibility: hidden;
+    padding-right: 10px;
   }
 }
 .navBar {
@@ -73,6 +87,20 @@ export default {
   .container {
     display: flex;
     flex-flow: row wrap;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      display: none;
+    }
+  }
+  .show {
+    @media (max-width: 768px) {
+      display: flex;
+    }
+  }
+  .menu {
+    @media (min-width: 768px) {
+      display: none;
+    }
   }
   .li-link {
     flex: 1;
