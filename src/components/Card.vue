@@ -54,14 +54,14 @@ export default {
   }
   .title {
     flex: 1;
-    font-size: 36px;
+    font-size: $title;
     padding: 20px;
   }
 
   .summary {
     flex: 1;
     text-align: justify;
-    font-size: 16px;
+    font-size: $small-content;
   }
 
   .logos {
@@ -76,8 +76,5 @@ export default {
     max-height: 50px;
     max-width: 50px;
     padding: 20px;
-    .img {
-      fill: red;
-    }
   }
 </style>

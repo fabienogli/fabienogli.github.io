@@ -4,26 +4,19 @@
 @import './fontawesome/scss/solid.scss';
 @import './fontawesome/scss/regular.scss';
 
-head {
-    border: solide 1px black;
-}
-
 body {
-    border: solide 1px black;
     background-color: $primaryColor;
     color: $onPrimary;
+    font: normal $content $main-font;
+
 }
 
-h1 {
+h1, h2 {
     color: $onPrimary;
 }
 
-h2 {
-    color: $onPrimary;
-}
 
 div {
-	color: $onPrimary;
 	font-size: $content;
 }
 

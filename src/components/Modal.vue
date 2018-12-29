@@ -56,7 +56,7 @@
   }
 
   .modal-header {
-    font-size: 25px;
+    font-size: $title;
     color: $primaryText;
     text-align: center;
   }
@@ -107,7 +107,7 @@
   .modal-body {
     padding: 5px 2px;
     width: 80%;
-    font-size: 15px;
+    font-size: $content;
   }
   .modal-footer {
     display: flex;

@@ -65,7 +65,7 @@ export default {
 
 .about-content {
   color: $onPrimary;
-  font-size: 32px;
+  font-size: $content;
 }
 
 .presentation {
@@ -83,7 +83,7 @@ export default {
     justify-content: center;
     .name {
       color: #f6db7b;
-      font-size: 50px;
+      font-size: $subtitle;
     }
   }
 }
