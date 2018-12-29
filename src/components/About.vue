@@ -13,29 +13,29 @@
 </template>
 
 <script>
-import text from "@/texts/about"
-import { clearInterval } from 'timers';
+import text from "@/texts/about";
+import { clearInterval } from "timers";
 export default {
   name: "About",
   data() {
     return {
       headline: "",
       content: text.content,
-      interval: "",
+      interval: ""
     };
   },
   computed: {
     lang() {
       if (this.interval !== "") {
-        window.clearInterval(this.interval)
+        window.clearInterval(this.interval);
       }
-      this.interval = this.writeHeadline()
-      return this.$store.getters["lang/get"]
+      this.interval = this.writeHeadline();
+      return this.$store.getters["lang/get"];
     }
   },
   methods: {
     writeHeadline() {
-      let lang = this.$store.getters["lang/get"]
+      let lang = this.$store.getters["lang/get"];
       let headline = text.headline[lang];
       this.headline = "";
       if (headline === undefined) {
@@ -43,15 +43,15 @@ export default {
       }
       let i = 0;
       let interval = setInterval(() => {
-        this.headline += headline.charAt(i)
-        i++
-      }, 50)
+        this.headline += headline.charAt(i);
+        i++;
+      }, 50);
       if (i === headline.length) {
-        clearInterval(interval)
+        clearInterval(interval);
       }
-      return interval
-    }
-  }
+      return interval;
+    },
+  },
 };
 </script>
 

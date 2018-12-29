@@ -55,7 +55,7 @@ export default {
       contact: text.contact,
       projects: text.projects,
       about: text.about,
-      collapsed: true
+      collapsed: false,
     };
   },
 
@@ -116,6 +116,9 @@ export default {
     align-items: center;
     flex: 1;
     padding-left: 5px;
+    .menu-text {
+      color: $onPrimary;
+    }
     &:hover {
       .menu-text {
         color: $accentColor;
