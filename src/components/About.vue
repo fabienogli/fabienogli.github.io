@@ -45,7 +45,7 @@ export default {
       let interval = setInterval(() => {
         this.headline += headline.charAt(i)
         i++
-      }, 100)
+      }, 50)
       if (i === headline.length) {
         clearInterval(interval)
       }

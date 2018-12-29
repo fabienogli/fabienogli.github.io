@@ -3,7 +3,11 @@
 $fa-font-path: './fontawesome/webfonts';
 $main-font: 'Roboto', sans-serif;
 
-$primaryColor: #083D77;
+$lightGrey: #a0a0a0;
+$dark: #000000;
+
+$primaryColor: #083d77;
+$primaryLight: #035ebe;
 $accentColor: #F4D35E;
 $onPrimary: #EBEBD3;
 $onSecondary: #083D77;
@@ -11,4 +15,7 @@ $onAccentColor: #0000;
 
 $select-background: red;
 $select-color: blue;
-$title: 48px;
+
+$title: 40px;
+$subtitle: 32px;
+$content: 22px;
