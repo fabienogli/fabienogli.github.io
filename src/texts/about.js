@@ -8,7 +8,7 @@ export default {
     " Polytech in Clermont-Ferrand for 2 years, where I mainly studied mathematics. <br>" +
     "I then joined Polytech Lyon with the purpose to become a computer science engineer." +
     "Whether as a team or on my side, I do my best to improve continuously.<br>"+
-    " Through my school projects or interships, I have learnt to be patient and adapt."+ 
+    " Through my school projects or interships, I have learnt to be patient and adapt. "+ 
     "Motivated by new discoveries, my passion for computer science continues to grow over time.",
     fr: "Après avoir effectué mes études secondaires au Puy-en-Velay, j'ai rejoint pendant 2 ans le Parcours "+
     "des écoles d'ingénieurs Polytech à Clermont-Ferrand où j'ai essentiellement étudier les mathématiques. <br>"+ 
