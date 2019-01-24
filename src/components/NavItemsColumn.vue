@@ -9,10 +9,8 @@
         <div class="menu-text">Menu</div>
       </div>
       <transition name="fade">
-        <div class="mask" v-if="collapsed">
-          <div class="sidebar container" @click="collapse">
-          <ul class="items container" >
-            <li class="action">
+          <ul class="items container" v-if="collapsed">
+            <li class="action" @click="collapse">
               <div class="action">
                 <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                   <path d="M0 0h24v24H0z" fill="none"></path>
@@ -39,8 +37,6 @@
               >{{contact[lang]}}</router-link>
             </li>
         </ul>
-        </div>
-        </div>
       </transition>
     </div>
   </div>
@@ -81,25 +77,7 @@ export default {
 <style lang="scss" scoped>
 @import "~@/styles/_variables";
 
-.mask {
-  min-width: 100vh;
-  min-height: 100vh;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: black;
-  position: fixed;
 
-}
-.sidebar {
-  position: fixed;
-  width: 80%;
-  min-height: 100%;
-  right: 5;
-  z-index: 2;
-  box-shadow: 4px 4px 8px 3px $dark;
-  background-color: $primaryLight;
-}
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.2s;
@@ -110,9 +88,10 @@ export default {
 .items {
   display: flex;
   position: absolute;
-  top: 30;
   flex-flow: column wrap;
   align-items: flex-start;
+  box-shadow: 4px 4px 8px 3px $dark;
+  background-color: $primaryLight;
 }
 .menu {
   display: flex;
