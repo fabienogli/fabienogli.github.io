@@ -9,34 +9,38 @@
         <div class="menu-text">Menu</div>
       </div>
       <transition name="fade">
-        <ul class="items container" v-if="collapsed">
-          <li class="action" @click="collapse">
-            <div class="action">
-              <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
-              </svg>
-              <div class="menu-text">Menu</div>
-            </div>
-          </li>
-          <li class="li-link" @click="collapse">
-            <router-link class="link" active-class="active" :to="{ name: 'about' }">{{about[lang]}}</router-link>
-          </li>
-          <li class="li-link" @click="collapse">
-            <router-link
-              class="link"
-              active-class="active"
-              :to="{ name: 'projects' }"
-            >{{projects[lang]}}</router-link>
-          </li>
-          <li class="li-link" @click="collapse">
-            <router-link
-              class="link"
-              active-class="active"
-              :to="{ name: 'contact' }"
-            >{{contact[lang]}}</router-link>
-          </li>
+        <div class="mask" v-if="collapsed">
+          <div class="sidebar container" @click="collapse">
+          <ul class="items container" >
+            <li class="action">
+              <div class="action">
+                <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+                </svg>
+                <div class="menu-text">Menu</div>
+              </div>
+            </li>
+            <li class="li-link" @click="collapse">
+              <router-link class="link" active-class="active" :to="{ name: 'about' }">{{about[lang]}}</router-link>
+            </li>
+            <li class="li-link" @click="collapse">
+              <router-link
+                class="link"
+                active-class="active"
+                :to="{ name: 'projects' }"
+              >{{projects[lang]}}</router-link>
+            </li>
+            <li class="li-link" @click="collapse">
+              <router-link
+                class="link"
+                active-class="active"
+                :to="{ name: 'contact' }"
+              >{{contact[lang]}}</router-link>
+            </li>
         </ul>
+        </div>
+        </div>
       </transition>
     </div>
   </div>
@@ -55,7 +59,7 @@ export default {
       contact: text.contact,
       projects: text.projects,
       about: text.about,
-      collapsed: false,
+      collapsed: true,
     };
   },
 
@@ -77,6 +81,25 @@ export default {
 <style lang="scss" scoped>
 @import "~@/styles/_variables";
 
+.mask {
+  min-width: 100vh;
+  min-height: 100vh;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: black;
+  position: fixed;
+
+}
+.sidebar {
+  position: fixed;
+  width: 80%;
+  min-height: 100%;
+  right: 5;
+  z-index: 2;
+  box-shadow: 4px 4px 8px 3px $dark;
+  background-color: $primaryLight;
+}
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.2s;
@@ -85,15 +108,10 @@ export default {
   opacity: 0;
 }
 .items {
-  // display: none;
-  width: 100%;
-  box-shadow: 4px 4px 8px 3px $dark;
-  border-radius: 23px;
-  position: absolute;
-  background-color: $primaryLight;
   display: flex;
+  position: absolute;
+  top: 30;
   flex-flow: column wrap;
-  left: 0;
   align-items: flex-start;
 }
 .menu {
