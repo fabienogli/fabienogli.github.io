@@ -66,6 +66,7 @@ export default {
 .about-content {
   color: $onPrimary;
   font-size: $content;
+  text-align: justify;
 }
 
 .presentation {
