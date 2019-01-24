@@ -55,7 +55,7 @@ export default {
       contact: text.contact,
       projects: text.projects,
       about: text.about,
-      collapsed: true,
+      collapsed: false,
     };
   },
 
@@ -92,6 +92,7 @@ export default {
   align-items: flex-start;
   box-shadow: 4px 4px 8px 3px $dark;
   background-color: $primaryLight;
+  border-radius: 23px;
 }
 .menu {
   display: flex;

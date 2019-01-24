@@ -8,7 +8,7 @@
         <div class="name">{{headline}}</div>
       </div>
     </div>
-    <div class="about-content">{{content[lang]}}</div>
+    <div class="about-content" v-html="content[lang]">{{content[lang]}}</div>
   </div>
 </template>
 

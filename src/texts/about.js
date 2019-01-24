@@ -4,8 +4,17 @@ export default {
     fr: "Bonjour et bienvenue sur mon portfolio ! Je m'appelle Fabien Ogli.",
   },
   content: {
-    en: "Passionate by problem resolution, I natturaly went for mathematics and then to computer science. The real pleasure I found in it is to learn everyday, which make you evolve constantly.",
-    fr: "Passionné par la résolution de problème, je me suis naturellement tourné vers les mathématiques et ensuite vers l'informatique. " +
-    "Les découvertes que j'ai faites et que je continue de faire dans ce monde digital me permettent de m'améliorer constamment.",
+    en: "After completing my secondary studies in Le Puy-en-Velay, I joined a preparatory classes to gain entry into the engineering school"+
+    " Polytech in Clermont-Ferrand for 2 years, where I mainly studied mathematics. <br>" +
+    "I then joined Polytech Lyon with the purpose to become a computer science engineer." +
+    "Whether as a team or on my side, I do my best to improve continuously.<br>"+
+    " Through my school projects or interships, I have learnt to be patient and adapt."+ 
+    "Motivated by new discoveries, my passion for computer science continues to grow over time.",
+    fr: "Après avoir effectué mes études secondaires au Puy-en-Velay, j'ai rejoint pendant 2 ans le Parcours "+
+    "des écoles d'ingénieurs Polytech à Clermont-Ferrand où j'ai essentiellement étudier les mathématiques. <br>"+ 
+    "J’ai ensuite rejoint Polytech Lyon afin de devenir un ingénieur en informatique. " +
+    "Que ce soit en équipe ou de mon côté, j’essaie de m’améliorer continuellement.<br>"+
+    "À travers mes projets scolaires ou mes stages, j’ai appris à être patient et à m’adapter." +
+    "Motivé par de nouvelles découvertes, ma passion envers l'informatique ne cesse de grandir au fil du temps."
   }
 }
