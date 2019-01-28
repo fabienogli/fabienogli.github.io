@@ -6,30 +6,31 @@
 </template>
 
 <script>
-import NavBar from '@/components/NavBar';
+import NavBar from "@/components/NavBar";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    NavBar,
+    NavBar
   },
   methods: {
     test(event) {
-      let bottomOfWindow =
-          document.documentElement.scrollTop + window.innerHeight ===
-          document.documentElement.offsetHeight;
-      
-      let topOfWindow =
-        document.documentElement.scrollTop === 0
-
-      if (event.deltaY < 0 & topOfWindow) {
-        // console.log("srolling up at top");
-      }
-      if (event.deltaY > 0 & bottomOfWindow) {
-        // console.log("scrolling down at bottom")
-      }
-
-    }
+      //@TODO if you want more smoothness
+      //   let bottomOfWindow =
+      //       document.documentElement.scrollTop + window.innerHeight ===
+      //       document.documentElement.offsetHeight;
+      //   let topOfWindow =
+      //     document.documentElement.scrollTop === 0
+      //   if (event.deltaY < 0 & topOfWindow) {
+      //     console.log("srolling up at top");
+      //   }
+      //   if (event.deltaY > 0 & bottomOfWindow) {
+      //     console.log("scrolling down at bottom")
+      //   }
+    },
+  },
+  mounted() {
+    console.log("mounted");
   }
 };
 </script>

@@ -3,10 +3,10 @@
     <div class="brand">
       <img class="logo" src="@/assets/logo.png">
     </div>
-    <nav-items-column class="nav-items container column" />
-    <nav-items-row class="nav-items container row" />
+    <nav-items-column :lang="this.lang" :about="this.about" :projects="this.projects" class="nav-items container column"/>
+    <nav-items-row :lang="this.lang" :about="this.about" :projects="this.projects" class="nav-items container row"/>
     <div class="lang container">
-      <select class="lang" v-model="lang" @change="setLang()">
+      <select class="lang" v-model="lang" @change="switchLang()">
         <option value="fr">FR</option>
         <option value="en">EN</option>
       </select>
@@ -15,27 +15,36 @@
 </template>
 
 <script>
-import NavItemsRow from "@/components/NavItemsRow"
-import NavItemsColumn from "@/components/NavItemsColumn"
+import NavItemsRow from "@/components/NavItemsRow";
+import NavItemsColumn from "@/components/NavItemsColumn";
+import text from "@/texts/nav.js";
+
 export default {
   name: "NavBar",
-  components: 
-  {
+  components: {
     NavItemsRow,
     NavItemsColumn
   },
-  data() {
+  data(){
     return {
-      lang: "fr",
-    };
+      lang: "en",
+      projects: text.projects,
+      about: text.about,
+    }
   },
   methods: {
     setLang() {
+      let _lang = navigator.userLanguage || navigator.language;
+      _lang = _lang.split("-")[0];
+      if (_lang === "fr" || _lang === "en") {
+        this.lang = _lang;
+        this.$store.dispatch("lang/setLang", this.lang);
+      }
+    },
+    switchLang() {
       this.$store.dispatch("lang/setLang", this.lang);
     },
-    toggle() {
-
-    }
+    toggle() {}
   },
   mounted() {
     this.setLang();
@@ -82,7 +91,7 @@ export default {
 }
 .row {
   @media (max-width: 768px) {
-      display: none;
-    }
-} 
+    display: none;
+  }
+}
 </style>

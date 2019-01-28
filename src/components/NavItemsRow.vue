@@ -11,34 +11,18 @@
           :to="{ name: 'projects' }"
         >{{projects[lang]}}</router-link>
       </li>
-      <li class="li-link">
-        <router-link class="link" active-class="active" :to="{ name: 'contact' }">{{contact[lang]}}</router-link>
-      </li>
     </ul>
   </div>
 </template>
 
 <script>
-import text from "@/texts/nav.js";
 export default {
   name: "NavItemsRow",
+  props: ["lang", "about", "projects"],
   data() {
     return {
-      lang: "fr",
-      contact: text.contact,
-      projects: text.projects,
-      about: text.about,
       collapsed: false
     };
-  },
-  methods: {
-    setLang() {
-      this.$store.dispatch("lang/setLang", this.lang);
-    },
-    toggle() {}
-  },
-  mounted() {
-    this.setLang();
   }
 };
 </script>
