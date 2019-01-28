@@ -1,14 +1,14 @@
 <template>
   <div class="about">
-    <div class="presentation">
+    <div class="presentation container">
       <div class="photo">
-        <img src="@/assets/moi.png">
+        <img class="img" src="@/assets/moi.png">
       </div>
-      <div class="name-container">
+      <div class="name-container container">
         <div class="name">{{headline}}</div>
       </div>
     </div>
-    <div class="about-content" v-html="content[lang]">{{content[lang]}}</div>
+    <div class="about-content container" v-html="content[lang]">{{content[lang]}}</div>
   </div>
 </template>
 
@@ -73,17 +73,27 @@ export default {
   padding: 20px;
   display: flex;
   flex-flow: row wrap;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   justify-content: center;
   .photo {
+      height: 100%;
+      width: 100%;
     flex: 1;
+    .img {
+      max-width: 100%;
+    }
   }
+  background-color: $primaryLight;
+  border-radius: 8px;
   .name-container {
     flex: 1;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     .name {
-      color: #f6db7b;
+      color: $accentColor;
       font-size: $subtitle;
     }
   }
