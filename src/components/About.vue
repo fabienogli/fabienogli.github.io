@@ -93,7 +93,7 @@ export default {
       max-width: 100%;
     }
   }
-  // background-color: $primaryLight;
+  background-color: $primaryLight;
   border-radius: 8px;
   .top {
     flex: 1;
