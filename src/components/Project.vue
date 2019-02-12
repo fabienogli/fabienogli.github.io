@@ -9,8 +9,8 @@
       </div>
       <div slot="footer" class="footer">
         <div class="content">
+            <ressources :ressources="ressources" :hoverColor="'#F4D35E'" :color="'#a0a0a0'"/>
             <logos :logos="logos" />
-            <ressources :ressources="ressources" />
         </div>
       </div>
     </modal>
@@ -44,5 +44,10 @@ export default {
 @import "~@/styles/_variables";
 .content {
   color: $onPrimary;
+}
+.link.logo {
+    &:hover {
+    fill: white;
+    }
 }
 </style>

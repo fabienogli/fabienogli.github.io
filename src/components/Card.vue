@@ -3,10 +3,10 @@
     <div class="content" @click="showModal = true">
       <div class="title">{{ title }}</div>
       <div class="summary">{{summary[lang]}}</div>
-      <ressources :ressources="ressources"/>
+      <ressources :ressources="ressources" color="black" :hoverColor="'#035ebe'" />
       <logos :logos="logos" />
     </div>
-    <project v-if="showModal" @close="showModal = false" :title="title" :logos="logos" :ressources="ressources" :content="summary" />
+    <project v-if="showModal" @close="showModal = false" :title="title" :logos="logos" :ressources="ressources" :content="content" />
   </div>
 </template>
 
@@ -18,7 +18,7 @@ import Logos from '@/components/Logos';
 export default {
   name: "Card",
   components: {Project, Logos, Ressources},
-  props: ["title", "summary", "logos", "ressources"],
+  props: ["title", "summary", "logos", "ressources", "content"],
   data() {
     return {
       msg: "Card Component",
@@ -28,7 +28,7 @@ export default {
   computed: {
     lang() {
       return this.$store.getters["lang/get"];
-    }
+    },
   }
 };
 </script>
@@ -41,7 +41,12 @@ export default {
   min-height: 300px;
   max-width: 300px;
   min-width: 300px;
-  padding: 20px 20px 20px 20px;
+  margin: 20px;
+  box-sizing: border-box;
+  &:hover {
+    box-shadow: 5px 12px 24px 6px $lightGrey;
+    cursor: zoom-in;
+  }
 }
 
 .content {
@@ -50,7 +55,7 @@ export default {
   height: 100%;
   display: flex;
   flex-flow: column wrap;
-  padding: 5%;
+  padding: 5px;
 }
 .title {
   flex: 1;
@@ -63,5 +68,11 @@ export default {
   text-align: justify;
   font-size: $small-content;
   padding: 5px;
+}
+.link.logo {
+  &:hover {
+    fill: $primaryColor;
+    cursor: pointer;
+  }
 }
 </style>

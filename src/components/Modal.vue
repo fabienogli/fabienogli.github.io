@@ -3,7 +3,7 @@
     <transition name="modal">
       <div class="modal-mask">
         <div class="modal-wrapper" @click.prevent="close">
-          <div class="modal-container" @click.stop>
+          <div class="modal-container container" @click.stop>
             <div class="modal-header">
               <slot name="header"></slot>
             </div>
@@ -41,6 +41,9 @@ export default {
 @import "~@/styles/_variables";
 
 .modal {
+    &:hover {
+      cursor: default;
+    }
   position: fixed;
   top: 0;
   left: 0;
@@ -61,7 +64,6 @@ export default {
 .modal-container {
   display: flex;
   flex-direction: column;
-  width: 650px;
   min-height: 400px;
   padding: 20px 30px;
   background-color: $primaryColor;
