@@ -4,7 +4,7 @@
       <div class="title">{{ title }}</div>
       <div class="summary">{{summary[lang]}}</div>
       <ressources :ressources="ressources" color="black" :hoverColor="'#035ebe'" />
-      <logos :logos="logos" />
+      <logos :logos="logos" :color='"#00000"'/>
     </div>
     <project v-if="showModal" @close="showModal = false" :title="title" :logos="logos" :ressources="ressources" :content="content" />
   </div>
