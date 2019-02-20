@@ -10,7 +10,7 @@
       <div slot="footer" class="footer">
         <div class="content">
             <ressources :ressources="ressources" :hoverColor="'#F4D35E'" :color="'#a0a0a0'"/>
-            <logos :logos="logos" />
+            <logos :logos="logos" :color="'#a0a0a0'"/>
         </div>
       </div>
     </modal>
