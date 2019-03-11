@@ -1,6 +1,7 @@
 export default {
   id: 2,
   title: "SafeDrive",
+  illustration: "safe_drive.png",
   summary: {
     en: "The aim is to implement a peer to peer communication system within a multi agent system.",
     fr: "Le but de ce projet est d’implémenter un système de communication pair à pair au sein d’un système multi-agents.",

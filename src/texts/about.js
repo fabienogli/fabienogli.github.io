@@ -11,10 +11,10 @@ export default {
     " Through my school projects or interships, I have learnt to be patient and adapt myself. "+ 
     "Motivated by new discoveries, my passion for computer science continues to grow over time.",
     fr: "Après avoir effectué mes études secondaires au Puy-en-Velay, j'ai rejoint pendant 2 ans le Parcours "+
-    "des écoles d'ingénieurs Polytech à Clermont-Ferrand où j'ai essentiellement étudier les mathématiques. <br>"+ 
-    "J’ai ensuite rejoint Polytech Lyon afin de devenir un ingénieur en informatique. " +
-    "Que ce soit en équipe ou de mon côté, j’essaie de m’améliorer continuellement.<br>"+
+    "des écoles d'ingénieurs Polytech à Clermont-Ferrand où j'ai essentiellement étudié les mathématiques. <br>"+ 
+    "J’ai ensuite integré Polytech Lyon afin de devenir un ingénieur en informatique. " +
+    "Que ce soit en équipe ou seul, j’essaie de m’améliorer continuellement.<br>"+
     "À travers mes projets scolaires ou mes stages, j’ai appris à être patient et à m’adapter. " +
-    "Motivé par de nouvelles découvertes, ma passion envers l'informatique ne cesse de grandir au fil du temps."
+    "Motivé par de nouvelles découvertes, ma passion envers l'informatique ne cesse de croître."
   }
 }

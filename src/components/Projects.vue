@@ -1,6 +1,6 @@
 <template>
   <div class="projects">
-    <card v-for="project in projects" :content="project.content" :ressources="project.resources" :title="project.title" :summary="project.summary" :logos="project.logos" :key="project.id" />
+    <card v-for="project in projects" :content="project.content" :ressources="project.resources" :title="project.title" :illustration="project.illustration" :summary="project.summary" :logos="project.logos" :key="project.id" />
   </div>
 </template>
 
@@ -10,7 +10,7 @@
   import safedrive from '@/texts/projects/safedrive.js'
   import direct from '@/texts/projects/direct_chat.js'
   import scrumbattle from '@/texts/projects/scrumbattle'
-
+  var png = "/static/logo.png"
 export default {
   name: "Projects",
   components: { Card },

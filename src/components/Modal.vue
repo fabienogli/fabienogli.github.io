@@ -1,8 +1,8 @@
 <template>
   <div class="modal">
     <transition name="modal">
-      <div class="modal-mask">
-        <div class="modal-wrapper" @click.prevent="close">
+      <div class="modal-mask" @click.prevent="close">
+        <div class="modal-wrapper">
           <div class="modal-container container" @click.stop>
             <div class="modal-header">
               <slot name="header"></slot>
@@ -51,14 +51,16 @@ export default {
   height: 100%;
 }
 .modal-wrapper {
-  display: table-cell;
-  vertical-align: middle;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
 }
 
 .modal-header {
   font-size: $title;
   color: $onPrimary;
   text-align: center;
+  flex: 1;
 }
 
 .modal-container {
@@ -81,6 +83,7 @@ export default {
 .modal-mask {
   width: 100%;
   min-height: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   display: table;
   transition: opacity 0.3s ease;
@@ -105,10 +108,11 @@ export default {
 }
 .modal-body {
   padding: 5px 2px;
-  width: 80%;
   font-size: $content;
+  flex: 1;
 }
 .modal-footer {
+  flex: 1;
   display: flex;
   flex-direction: row;
   justify-content: center;

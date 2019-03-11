@@ -3,10 +3,10 @@
     <div class="content" @click="showModal = true">
       <div class="title">{{ title }}</div>
       <div class="summary">{{summary[lang]}}</div>
-      <ressources :ressources="ressources" color="black" :hoverColor="'#035ebe'" />
+      <ressources :ressources="ressources" color="black" :hoverColor="'#035ebe'"  @click.stop/>
       <logos :logos="logos" :color='"#00000"'/>
     </div>
-    <project v-if="showModal" @close="showModal = false" :title="title" :logos="logos" :ressources="ressources" :content="content" />
+    <project v-if="showModal" @close="showModal = false" :illustration="illustration" :title="title" :logos="logos" :ressources="ressources" :content="content" />
   </div>
 </template>
 
@@ -18,7 +18,7 @@ import Logos from '@/components/Logos';
 export default {
   name: "Card",
   components: {Project, Logos, Ressources},
-  props: ["title", "summary", "logos", "ressources", "content"],
+  props: ["title", "summary", "logos", "ressources", "content", "illustration"],
   data() {
     return {
       msg: "Card Component",

@@ -1,6 +1,6 @@
 <template>
     <div class="ressource">
-      <a class="a-link" target="_blank" :href="lien" @mouseenter="mouseOver(true)" @mouseleave="mouseOver(false)" :style="style">
+      <a class="a-link" @click.stop="click" target="_blank" :href="lien" @mouseenter="mouseOver(true)" @mouseleave="mouseOver(false)" :style="style">
           <slot name="link"></slot>
         </a>
   </div>
@@ -25,6 +25,9 @@ export default {
     mouseOver(a) {
       this.hovering = a
     },
+    click(a) {
+      console.log(a);
+    }
   }
 };
 </script>
