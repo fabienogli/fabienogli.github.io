@@ -34,7 +34,6 @@ export default {
       ill: "/static/illustrations/" + this.illustration,
     }
   },
-  
   methods: {
     close() {
       this.$emit("close");
@@ -44,7 +43,7 @@ export default {
     lang() {
       return this.$store.getters["lang/get"];
     }
-  }
+  },
 };
 </script>
 
@@ -66,7 +65,7 @@ export default {
   width: 100%;
 }
 .img {
-  height: 250px;
+  height: 450px;
   @media (max-width: 768px) {
       height: 180px;
     }

@@ -5,9 +5,11 @@ import Vuex from 'vuex'
 import App from './App'
 import router from './router'
 import store from './store'
+import Meta from 'vue-meta'
 import './styles/global.scss'
 
 Vue.use(Vuex)
+Vue.use(Meta)
 Vue.config.productionTip = false
 Vue.directive('click-outside', {
   bind: function (el, binding, vnode) {

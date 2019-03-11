@@ -24,6 +24,10 @@ export default {
         scrumbattle,
       ],
     };
+  },
+    metaInfo: {
+    title: "Projects",
+    titleTemplate: '%s ← Fabien Ogli'
   }
 };
 </script>

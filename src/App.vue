@@ -1,4 +1,4 @@
-<template>
+ <template>
   <div class="app" @mousewheel="test">
     <nav-bar/>
     <router-view/>
@@ -31,7 +31,13 @@ export default {
   },
   mounted() {
     console.log("mounted");
-  }
+  },
+  metaInfo: {
+      // if no subcomponents specify a metaInfo.title, this title will be used
+      title: 'Fabien Ogli',
+      // all titles will be injected into this template
+      titleTemplate: '%s | My Porfolio'
+    }
 };
 </script>
 

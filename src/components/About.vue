@@ -59,6 +59,10 @@ export default {
       }
       return interval;
     }
+  },
+  metaInfo: {
+    title: "About",
+    titleTemplate: '%s ← Fabien Ogli'
   }
 };
 </script>
