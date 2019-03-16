@@ -5,10 +5,10 @@
         <div class="title">{{title}}</div>
       </div>
       <div slot="body" class="body">
-        <div class="content">
+        <div class="content container">
           <img class="img" :src="ill"> 
         </div>
-        <div class="content">{{content[lang]}}</div>
+        <div class="content container">{{content[lang]}}</div>
       </div>
       <div slot="footer" class="footer">
         <div class="content">
@@ -67,6 +67,9 @@ export default {
 .img {
   height: 450px;
   @media (max-width: 768px) {
+      height: 225px;
+  }
+  @media (max-width: 992px) {
       height: 180px;
     }
 }
