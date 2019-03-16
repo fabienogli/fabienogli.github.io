@@ -2,16 +2,22 @@
   <div class="app" @mousewheel="test">
     <nav-bar/>
     <router-view/>
+    <!-- <custom-footer/> -->
   </div>
 </template>
 
 <script>
-import NavBar from "@/components/NavBar";
-
+import NavBar from "@/components/NavBar"
+import CustomFooter from "@/components/CustomFooter"
 export default {
   name: "App",
   components: {
-    NavBar
+    NavBar,
+    CustomFooter
+  },
+  data () {
+    return {
+    }
   },
   methods: {
     test(event) {
@@ -46,5 +52,8 @@ export default {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   text-align: center;
   color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 </style>

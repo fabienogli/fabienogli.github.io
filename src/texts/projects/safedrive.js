@@ -3,11 +3,11 @@ export default {
   title: "SafeDrive",
   illustration: "safedrive.png",
   summary: {
-    en: "The aim is to implement a peer to peer communication system within a multi agent system.",
+    en: "The aim is to implement a peer to peer communication within a multi agent system.",
     fr: "Le but de ce projet est d’implémenter un système de communication pair à pair au sein d’un système multi-agents.",
   },
   content: {
-    en: "The aim is to implement a peer to peer communication system within a multi agent system.",
+    en: "The aim is to implement a peer to peer communication within a multi agent system.",
     fr: "Le but de ce projet est d’implémenter un système de communication pair à pair au sein d’un système multi-agents.",
   },
   resources: {

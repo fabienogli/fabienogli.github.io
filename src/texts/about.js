@@ -4,11 +4,11 @@ export default {
     fr: "Bonjour et bienvenue sur mon portfolio ! Je m'appelle Fabien Ogli.",
   },
   content: {
-    en: "After completing my secondary studies in Le Puy-en-Velay, I joined a preparatory classes to gain entry into the engineering school"+
+    en: "After completing my secondary studies in Le Puy-en-Velay, I joined a preparatory class to gain entry into the engineering school"+
     " Polytech in Clermont-Ferrand for 2 years, where I mainly studied mathematics. <br>" +
-    "I then joined Polytech Lyon with the purpose to become a computer science engineer. " +
-    "Whether as a team or on my side, I do my best to improve continuously.<br>"+
-    " Through my school projects or interships, I have learnt to be patient and adapt myself. "+ 
+    "I then joined Polytech Lyon with the purpose of becoming a computer science engineer. " +
+    "Whether as a team or by myself, I do my best to continuously improve.<br>"+
+    " Through my school projects or interships, I have learnt to be patient and to adapt. "+ 
     "Motivated by new discoveries, my passion for computer science continues to grow over time.",
     fr: "Après avoir effectué mes études secondaires au Puy-en-Velay, j'ai rejoint pendant 2 ans le Parcours "+
     "des écoles d'ingénieurs Polytech à Clermont-Ferrand où j'ai essentiellement étudié les mathématiques. <br>"+ 

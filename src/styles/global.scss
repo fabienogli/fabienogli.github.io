@@ -3,7 +3,10 @@
 @import './fontawesome/scss/fontawesome.scss';
 @import './fontawesome/scss/solid.scss';
 @import './fontawesome/scss/regular.scss';
-
+html, body {
+  height: 100%;
+  margin: 0;
+}
 body {
     background-color: $primaryColor;
     color: $onPrimary;
