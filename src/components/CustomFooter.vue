@@ -40,14 +40,10 @@ export default {
 <style lang="scss" scoped>
 @import "~@/styles/_variables";
 .CustomFooter {
-  padding-top: 20px;
-  @media (max-width: 768px) {
-    padding-top: 50px;
-  }
-  display: flex;
-  justify-content: center;
   height: 100%;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 
 }
 .content {
@@ -63,14 +59,11 @@ export default {
 
 }
 .content-container {
-  position: absolute;
-  padding: 20px;
   width: 100%;
-  bottom: 0;
   background-color: $secondColor;
   display: flex;
   justify-content: center;
-  z-index: -1;
+  flex-shrink: 0;
 
 }
 </style>

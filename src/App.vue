@@ -2,7 +2,7 @@
   <div class="app" @mousewheel="test">
     <nav-bar/>
     <router-view/>
-    <!-- <custom-footer/> -->
+    <custom-footer/>
   </div>
 </template>
 

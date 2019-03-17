@@ -55,8 +55,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 @import "~@/styles/_variables";
-.navbar {
-  background-color:red;
+.navBar {
+  flex:1;
+  flex-shrink: 0;
 }
 .lang {
   background-color: $primaryColor;
