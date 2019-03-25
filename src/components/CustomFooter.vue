@@ -1,7 +1,7 @@
 <template>
   <div class="CustomFooter">
       
-      <div class="content-container container"> 
+      <div class="content-container"> 
           <a class="content"  :href="'/static/informations/' + urls[lang] + '.pdf'" download>
           {{urls[lang] | capitalize}}
       </a>
@@ -60,6 +60,8 @@ export default {
 }
 .content-container {
   width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
   background-color: $secondColor;
   display: flex;
   justify-content: center;
