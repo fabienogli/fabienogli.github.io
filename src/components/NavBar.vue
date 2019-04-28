@@ -17,7 +17,8 @@
 <script>
 import NavItemsRow from "@/components/NavItemsRow";
 import NavItemsColumn from "@/components/NavItemsColumn";
-import text from "@/texts/nav.js";
+import firebase from 'firebase'
+
 
 export default {
   name: "NavBar",
@@ -28,8 +29,8 @@ export default {
   data(){
     return {
       lang: "en",
-      projects: text.projects,
-      about: text.about,
+      projects: "",
+      about: "",
     }
   },
   methods: {
@@ -41,13 +42,26 @@ export default {
         this.$store.dispatch("lang/setLang", this.lang);
       }
     },
+    setText(text) {
+      this.projects = text.projects
+      this.about = text.contact
+    },
     switchLang() {
       this.$store.dispatch("lang/setLang", this.lang);
     },
-    toggle() {}
+    getText() {
+      return firebase
+        .database()
+        .ref('nav/')
+        .once('value', snapshot => {
+          this.setText(snapshot.val())
+          this.$store.dispatch('nav/setNav', snapshot.val())
+        })
+    },
   },
   mounted() {
-    this.setLang();
+    this.setLang()
+    this.getText()
   }
 };
 </script>

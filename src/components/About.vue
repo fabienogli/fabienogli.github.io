@@ -6,19 +6,19 @@
       </div>
       <div class="top container">
         <div class="name-container">
-          <div class="name">{{headline}}</div>
+          <div v-if="text.headline" class="name">{{headline}}</div>
         </div>
         <contact />
       </div>
     </div>
-    <div class="about-content container" v-html="content[lang]">{{content[lang]}}</div>
+    <div v-if="text.content" class="about-content container" v-html="content[lang]">{{content[lang]}}</div>
   </div>
 </template>
 
 <script>
-import text from "@/texts/about";
-import { clearInterval } from "timers";
-import Contact from "@/components/Contact";
+import { clearInterval } from 'timers'
+import Contact from '@/components/Contact'
+import firebase from 'firebase'
 
 export default {
   name: "About",
@@ -28,10 +28,12 @@ export default {
   data() {
     return {
       headline: "",
-      content: text.content,
-      interval: ""
-    };
+      interval: "",
+    }
   },
+  mounted() {
+      this.getText()
+    },
   computed: {
     lang() {
       if (this.interval !== "") {
@@ -39,26 +41,45 @@ export default {
       }
       this.interval = this.writeHeadline();
       return this.$store.getters["lang/get"];
+    },
+    text() {
+      return this.$store.getters['about/all']
+    },
+    content() {
+      if (this.text.content != undefined)
+        return this.text.content
     }
   },
   methods: {
-    writeHeadline() {
+    getHeadline() {
       let lang = this.$store.getters["lang/get"];
-      let headline = text.headline[lang];
+      if (this.text.headline != undefined)
+        return this.text.headline[lang]
+    },
+    writeHeadline() {
+      let headline = this.getHeadline()
       this.headline = "";
       if (headline === undefined) {
         return;
       }
       let i = 0;
       let interval = setInterval(() => {
-        this.headline += headline.charAt(i);
-        i++;
-      }, 50);
+        this.headline += headline.charAt(i)
+        i++
+      }, 50)
       if (i === headline.length) {
-        clearInterval(interval);
+        clearInterval(interval)
       }
-      return interval;
-    }
+      return interval
+    },
+    getText() {
+      return firebase
+        .database()
+        .ref('about/')
+        .once('value', snapshot => {
+            this.$store.dispatch('about/setAbout', snapshot.val())
+        })
+    },
   },
   metaInfo: {
     title: "About",

@@ -6,28 +6,38 @@
 
 <script>
   import Card from "@/components/Card";
-  import coworkshop from '@/texts/projects/coworkshop.js'
-  import safedrive from '@/texts/projects/safedrive.js'
-  import direct from '@/texts/projects/direct_chat.js'
-  import scrumbattle from '@/texts/projects/scrumbattle'
+  import firebase from 'firebase'
   var png = "/static/logo.png"
+
 export default {
   name: "Projects",
   components: { Card },
   data() {
     return {
       msg: "Projects Component",
-      projects: [
-        coworkshop,
-        safedrive,
-        direct,
-        scrumbattle,
-      ],
     };
   },
-    metaInfo: {
+  metaInfo: {
     title: "Projects",
     titleTemplate: '%s ← Fabien Ogli'
+  },
+  computed: {
+    projects() {
+      return this.$store.getters['projects/all']
+    }
+  },
+  methods: {
+    getProjects() {
+      return firebase
+        .database()
+        .ref('projects/')
+        .once('value', snapshot => {
+            this.$store.dispatch('projects/setProjects', snapshot.val())
+        });
+    },
+  },
+  mounted() {
+    this.getProjects()
   }
 };
 </script>

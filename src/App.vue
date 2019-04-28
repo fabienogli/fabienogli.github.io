@@ -35,18 +35,6 @@ export default {
       //     console.log("scrolling down at bottom")
       //   }
     },
-    getProjects() {
-      return firebase
-        .database()
-        .ref('projects/')
-        .once('value', snapshot => {
-            console.log(snapshot.val())
-        });
-    }
-  },
-  mounted() {
-    console.log("mounted");
-    this.getProjects()
   },
   metaInfo: {
       // if no subcomponents specify a metaInfo.title, this title will be used
