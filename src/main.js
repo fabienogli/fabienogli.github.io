@@ -7,6 +7,7 @@ import router from './router'
 import store from './store'
 import Meta from 'vue-meta'
 import './styles/global.scss'
+import '@/firebase/';
 
 Vue.use(Vuex)
 Vue.use(Meta)

@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "firebase": "^5.10.1",
     "node-sass": "^4.11.0",
     "prettier": "1.12.1",
     "sass-loader": "^7.1.0",
