@@ -17,7 +17,7 @@
 <script>
 import NavItemsRow from "@/components/NavItemsRow";
 import NavItemsColumn from "@/components/NavItemsColumn";
-import firebase from 'firebase'
+import 'firebase/database'
 
 
 export default {

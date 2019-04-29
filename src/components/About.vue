@@ -18,7 +18,7 @@
 <script>
 import { clearInterval } from 'timers'
 import Contact from '@/components/Contact'
-import firebase from 'firebase'
+import 'firebase/database'
 
 export default {
   name: "About",

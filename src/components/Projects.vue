@@ -6,7 +6,7 @@
 
 <script>
   import Card from "@/components/Card";
-  import firebase from 'firebase'
+import 'firebase/database'
   var png = "/static/logo.png"
 
 export default {
