@@ -2,7 +2,7 @@
   <div class="about">
     <div class="presentation container">
       <div class="photo">
-        <img id="photo" class="img">
+        <img :src="picture" class="img">
       </div>
       <div class="top container">
         <div class="name-container">
@@ -18,7 +18,9 @@
 <script>
 import { clearInterval } from 'timers'
 import Contact from '@/components/Contact'
-import 'firebase/database'
+import * as firebase from 'firebase/app';
+
+import 'firebase/database';
 
 export default {
   name: "About",
@@ -49,9 +51,19 @@ export default {
     content() {
       if (this.text.content != undefined)
         return this.text.content
+    },
+    picture() {
+      return this.$store.getters['illustrations/moi']
     }
   },
   methods: {
+    getPicture() {
+      firebase.database()
+        .ref('illustrations/moi')
+        .once('value', snapshot => {
+          this.$store.dispatch('illustrations/setMoi', snapshot.val())
+        })
+    },
     getHeadline() {
       let lang = this.$store.getters["lang/get"];
       if (this.text.headline != undefined)
@@ -80,20 +92,6 @@ export default {
         .once('value', snapshot => {
             this.$store.dispatch('text/setAbout', snapshot.val())
         })
-    },
-    getPicture() {
-      let storageRef = firebase.storage()
-          .ref()
-      let illustrationsRef = storageRef.child('illustrations')
-      let fileName = 'moi.png'
-      let logoRef = illustrationsRef.child(fileName)
-      logoRef.getDownloadURL().then(function(url) {
-        var test = url;
-        document.querySelector('#photo').src = test
-        console.log("Picture added")
-      }).catch(function(error) {
-        console.log(error)
-      })
     }
   },
   metaInfo: {

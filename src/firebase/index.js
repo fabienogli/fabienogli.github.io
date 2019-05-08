@@ -1,6 +1,4 @@
-import firebase from 'firebase/app';
-import 'firebase/database';
-import 'firebase/auth';
+import firebase from 'firebase'
 
 // firebase init goes here
 var config = {
@@ -12,6 +10,3 @@ var config = {
     messagingSenderId: "735924745715"
 };
 firebase.initializeApp(config)
-
-// firebase utils
-var database = firebase.database();

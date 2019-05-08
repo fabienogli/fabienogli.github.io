@@ -1,7 +1,7 @@
 <template>
   <div class="navBar">
     <div class="brand">
-      <img class="logo" src="@/assets/logo.png">
+      <img class="logo" :src="logo">
     </div>
     <nav-items-column :lang="this.lang" :about="this.about" :projects="this.projects" class="nav-items container column"/>
     <nav-items-row :lang="this.lang" :about="this.about" :projects="this.projects" class="nav-items container row"/>
@@ -17,7 +17,9 @@
 <script>
 import NavItemsRow from "@/components/NavItemsRow";
 import NavItemsColumn from "@/components/NavItemsColumn";
-import 'firebase/database'
+import * as firebase from 'firebase/app';
+
+import 'firebase/database';
 
 
 export default {
@@ -31,6 +33,11 @@ export default {
       lang: "en",
       projects: "",
       about: "",
+    }
+  },
+  computed: {
+    logo() {
+      return this.$store.getters['illustrations/logo']
     }
   },
   methods: {
@@ -49,6 +56,13 @@ export default {
     switchLang() {
       this.$store.dispatch("lang/setLang", this.lang);
     },
+    getPicture() {
+      firebase.database()
+        .ref('illustrations/logo')
+        .once('value', snapshot => {
+          this.$store.dispatch('illustrations/setLogo', snapshot.val())
+        })
+    },
     getText() {
       return firebase
         .database()
@@ -62,6 +76,7 @@ export default {
   mounted() {
     this.setLang()
     this.getText()
+    this.getPicture()
   }
 };
 </script>

@@ -6,7 +6,7 @@
       </div>
       <div slot="body" class="body">
         <div class="content container">
-          <img class="img" :src="ill"> 
+          <img class="img" :src="illustration"> 
         </div>
         <div class="content container">{{content[lang]}}</div>
       </div>
@@ -23,27 +23,22 @@
 <script>
 import Modal from '@/components/Modal';
 import Logos from '@/components/Logos';
-import Ressources from '@/components/Ressources';
+import Ressources from '@/components/Ressources'
 
 export default {
   name: "Project",
   components: { Modal, Ressources, Logos },
   props: ["title", "content", "logos", "ressources", "illustration"],
-  data(){
-    return {
-      ill: "/static/illustrations/" + this.illustration,
-    }
-  },
   methods: {
     close() {
       this.$emit("close");
-    }
+    },
   },
   computed: {
     lang() {
       return this.$store.getters["lang/get"];
     }
-  },
+  }
 };
 </script>
 

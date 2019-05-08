@@ -6,8 +6,8 @@
 
 <script>
   import Card from "@/components/Card";
-import 'firebase/database'
-  var png = "/static/logo.png"
+  import * as firebase from 'firebase/app';
+  import 'firebase/database';
 
 export default {
   name: "Projects",
@@ -28,8 +28,7 @@ export default {
   },
   methods: {
     getProjects() {
-      return firebase
-        .database()
+      firebase.database()
         .ref('projects/')
         .once('value', snapshot => {
             this.$store.dispatch('text/setProjects', snapshot.val())
