@@ -23,7 +23,7 @@ export default {
   },
   computed: {
     projects() {
-      return this.$store.getters['projects/all']
+      return this.$store.getters['text/projects']
     }
   },
   methods: {
@@ -32,7 +32,7 @@ export default {
         .database()
         .ref('projects/')
         .once('value', snapshot => {
-            this.$store.dispatch('projects/setProjects', snapshot.val())
+            this.$store.dispatch('text/setProjects', snapshot.val())
         });
     },
   },

@@ -55,7 +55,7 @@ export default {
         .ref('nav/')
         .once('value', snapshot => {
           this.setText(snapshot.val())
-          this.$store.dispatch('nav/setNav', snapshot.val())
+          this.$store.dispatch('text/setNav', snapshot.val())
         })
     },
   },

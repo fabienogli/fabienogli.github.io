@@ -2,7 +2,7 @@
   <div class="about">
     <div class="presentation container">
       <div class="photo">
-        <img class="img" src="@/assets/moi.png">
+        <img id="photo" class="img">
       </div>
       <div class="top container">
         <div class="name-container">
@@ -33,6 +33,7 @@ export default {
   },
   mounted() {
       this.getText()
+      this.getPicture()
     },
   computed: {
     lang() {
@@ -43,7 +44,7 @@ export default {
       return this.$store.getters["lang/get"];
     },
     text() {
-      return this.$store.getters['about/all']
+      return this.$store.getters['text/about']
     },
     content() {
       if (this.text.content != undefined)
@@ -77,9 +78,23 @@ export default {
         .database()
         .ref('about/')
         .once('value', snapshot => {
-            this.$store.dispatch('about/setAbout', snapshot.val())
+            this.$store.dispatch('text/setAbout', snapshot.val())
         })
     },
+    getPicture() {
+      let storageRef = firebase.storage()
+          .ref()
+      let illustrationsRef = storageRef.child('illustrations')
+      let fileName = 'moi.png'
+      let logoRef = illustrationsRef.child(fileName)
+      logoRef.getDownloadURL().then(function(url) {
+        var test = url;
+        document.querySelector('#photo').src = test
+        console.log("Picture added")
+      }).catch(function(error) {
+        console.log(error)
+      })
+    }
   },
   metaInfo: {
     title: "About",
