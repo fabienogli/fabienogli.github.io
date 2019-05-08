@@ -44,7 +44,7 @@ export default {
     },
     setText(text) {
       this.projects = text.projects
-      this.about = text.contact
+      this.about = text.about
     },
     switchLang() {
       this.$store.dispatch("lang/setLang", this.lang);
