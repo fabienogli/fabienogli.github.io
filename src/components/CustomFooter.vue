@@ -1,38 +1,46 @@
 <template>
   <div class="CustomFooter">
-      
-      <div class="content-container"> 
-          <a class="content"  :href="'/static/informations/' + urls[lang] + '.pdf'" download>
-          {{urls[lang] | capitalize}}
-      </a>
-      </div>
+    <div class="content-container">
+      <a
+        class="content"
+        @click="getResume(urls[lang])"
+      >{{urls[lang] | capitalize}}</a>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "CustomFooter",
-  data () {
+  data() {
     return {
-      urls : {
-    'fr': 'cv',
-    'en': 'resume'
-    }
-
-    }
+      urls: {
+        fr: "cv",
+        en: "resume"
+      },
+      
+    };
   },
   computed: {
-      lang() {
-        return this.$store.getters["lang/get"];
-    },
+    lang() {
+      return this.$store.getters["lang/get"];
+    }
+  },
+  methods: {
+    getResume(url) {
+      let link = 'https://firebasestorage.googleapis.com/v0/b/portfolio-api-4adeb.appspot.com/o/informations%2F' 
+      link += url
+      link += '.pdf?alt=media'
+      window.open(link, '_blank')
+    }
   },
   filters: {
-  capitalize: function (value) {
-    if (!value) return ''
-    value = value.toString()
-    return value.charAt(0).toUpperCase() + value.slice(1)
+    capitalize: function(value) {
+      if (!value) return "";
+      value = value.toString();
+      return value.charAt(0).toUpperCase() + value.slice(1);
+    }
   }
-}
 };
 </script>
 
@@ -44,7 +52,6 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-
 }
 .content {
   color: $onPrimary;
@@ -53,10 +60,8 @@ export default {
   transition: background-color 0.2s ease;
   &:hover {
     background-color: black;
-    color : white;
-
+    color: white;
   }
-
 }
 .content-container {
   width: 100%;
@@ -66,6 +71,5 @@ export default {
   display: flex;
   justify-content: center;
   flex-shrink: 0;
-
 }
 </style>
