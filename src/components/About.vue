@@ -35,7 +35,6 @@ export default {
   },
   mounted() {
       this.getText()
-      this.getPicture()
     },
   computed: {
     lang() {
@@ -57,13 +56,6 @@ export default {
     }
   },
   methods: {
-    getPicture() {
-      firebase.database()
-        .ref('illustrations/moi')
-        .once('value', snapshot => {
-          this.$store.dispatch('illustrations/setMoi', snapshot.val())
-        })
-    },
     getHeadline() {
       let lang = this.$store.getters["lang/get"];
       if (this.text.headline != undefined)

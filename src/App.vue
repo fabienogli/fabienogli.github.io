@@ -20,6 +20,9 @@ export default {
     return {
     }
   },
+  mounted() {
+    this.exportPicture()
+  },
   methods: {
     test(event) {
       //@TODO if you want more smoothness
@@ -34,6 +37,13 @@ export default {
       //   if (event.deltaY > 0 & bottomOfWindow) {
       //     console.log("scrolling down at bottom")
       //   }
+    },
+    exportPicture() {
+      firebase.database()
+        .ref('illustrations/moi')
+        .once('value', snapshot => {
+          this.$store.dispatch('illustrations/setMoi', snapshot.val())
+        })
     },
   },
   metaInfo: {

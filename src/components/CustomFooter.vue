@@ -4,6 +4,7 @@
       <a
         class="content"
         @click="getResume(urls[lang])"
+        href="#"
       >{{urls[lang] | capitalize}}</a>
     </div>
   </div>
