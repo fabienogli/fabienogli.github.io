@@ -3,8 +3,18 @@
     <div class="brand">
       <img class="logo" src="@/assets/logo.png">
     </div>
-    <nav-items-column :lang="this.lang" :about="this.about" :projects="this.projects" class="nav-items container column"/>
-    <nav-items-row :lang="this.lang" :about="this.about" :projects="this.projects" class="nav-items container row"/>
+    <nav-items-column
+      :lang="this.lang"
+      :about="this.about"
+      :projects="this.projects"
+      class="nav-items container column"
+    />
+    <nav-items-row
+      :lang="this.lang"
+      :about="this.about"
+      :projects="this.projects"
+      class="nav-items container row"
+    />
     <div class="lang container">
       <select class="lang" v-model="lang" @change="switchLang()">
         <option value="fr">FR</option>
@@ -17,7 +27,7 @@
 <script>
 import NavItemsRow from "@/components/NavItemsRow";
 import NavItemsColumn from "@/components/NavItemsColumn";
-import text from "@/texts/nav.js";
+var text = require("@/texts/nav.json");
 
 export default {
   name: "NavBar",
@@ -25,12 +35,12 @@ export default {
     NavItemsRow,
     NavItemsColumn
   },
-  data(){
+  data() {
     return {
       lang: "en",
       projects: text.projects,
-      about: text.about,
-    }
+      about: text.about
+    };
   },
   methods: {
     setLang() {
@@ -56,7 +66,7 @@ export default {
 <style lang="scss" scoped>
 @import "~@/styles/_variables";
 .navBar {
-  flex:1;
+  flex: 1;
   flex-shrink: 0;
 }
 .lang {
