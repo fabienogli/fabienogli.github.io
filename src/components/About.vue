@@ -8,7 +8,7 @@
         <div class="name-container">
           <div class="name">{{headline}}</div>
         </div>
-        <contact />
+        <contact/>
       </div>
     </div>
     <div class="about-content container" v-html="content[lang]">{{content[lang]}}</div>
@@ -16,14 +16,14 @@
 </template>
 
 <script>
-import text from "@/texts/about";
+var text = require("@/texts/about.json");
 import { clearInterval } from "timers";
 import Contact from "@/components/Contact";
 
 export default {
   name: "About",
   components: {
-    Contact,
+    Contact
   },
   data() {
     return {
@@ -62,7 +62,7 @@ export default {
   },
   metaInfo: {
     title: "About",
-    titleTemplate: '%s ← Fabien Ogli'
+    titleTemplate: "%s ← Fabien Ogli"
   }
 };
 </script>
