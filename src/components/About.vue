@@ -16,7 +16,7 @@
 </template>
 
 <script>
-var text = require("@/texts/about.json");
+const text = require("@/texts/about.json");
 import { clearInterval } from "timers";
 import Contact from "@/components/Contact";
 

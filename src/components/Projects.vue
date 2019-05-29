@@ -15,15 +15,16 @@
 
 <script>
 import Card from "@/components/Card";
-var jsonData = require("@/texts/projects.json");
-var png = "/static/logo.png";
+const jsonData = require("@/texts/projects.json");
+
+const png = "/static/logo.png";
 export default {
   name: "Projects",
   components: { Card },
   data() {
     return {
       msg: "Projects Component",
-      projects: this.jsonData
+      projects: jsonData
     };
   },
   metaInfo: {
