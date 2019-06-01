@@ -6,14 +6,14 @@
       </div>
       <div slot="body" class="body">
         <div class="content container">
-          <img class="img" :src="ill"> 
+          <img v-if="this.illustration" class="img" :src="ill">
         </div>
         <div class="content container">{{content[lang]}}</div>
       </div>
       <div slot="footer" class="footer">
         <div class="content">
-            <ressources :ressources="ressources" :hoverColor="'#F4D35E'" :color="'#EBEBD3'"/>
-            <logos :logos="logos" :color="'#EBEBD3'"/>
+          <ressources :ressources="ressources" :hoverColor="'#F4D35E'" :color="'#EBEBD3'"/>
+          <logos :logos="logos" :color="'#EBEBD3'"/>
         </div>
       </div>
     </modal>
@@ -21,18 +21,18 @@
 </template>
 
 <script>
-import Modal from '@/components/Modal';
-import Logos from '@/components/Logos';
-import Ressources from '@/components/Ressources';
+import Modal from "@/components/Modal";
+import Logos from "@/components/Logos";
+import Ressources from "@/components/Ressources";
 
 export default {
   name: "Project",
   components: { Modal, Ressources, Logos },
   props: ["title", "content", "logos", "ressources", "illustration"],
-  data(){
+  data() {
     return {
-      ill: "/static/illustrations/" + this.illustration,
-    }
+      ill: "/static/illustrations/" + this.illustration
+    };
   },
   methods: {
     close() {
@@ -43,7 +43,7 @@ export default {
     lang() {
       return this.$store.getters["lang/get"];
     }
-  },
+  }
 };
 </script>
 
@@ -55,9 +55,9 @@ export default {
   padding: 5px;
 }
 .link.logo {
-    &:hover {
+  &:hover {
     fill: white;
-    }
+  }
 }
 .body {
   display: flex;
@@ -67,10 +67,10 @@ export default {
 .img {
   height: 450px;
   @media (max-width: 768px) {
-      height: 225px;
+    height: 225px;
   }
   @media (max-width: 992px) {
-      height: 180px;
-    }
+    height: 180px;
+  }
 }
 </style>
