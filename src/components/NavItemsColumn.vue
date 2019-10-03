@@ -39,7 +39,7 @@
               </ul>
             </div>
           </div>
-          <div class="mask"></div>
+          <div class="mask" @click="collapsed = false"></div>
         </div>
       </transition>
     </div>
@@ -71,10 +71,10 @@ export default {
 @import "~@/styles/_variables";
 
 .sidebar {
-  color: white;
-  margin: 0 auto;
-  padding: 10px;
-  position: absolute;
+  color: $onPrimary;
+  margin: 0 0;
+  top: 0;
+  position: fixed;
   width: 100%;
   height: 100%;
   .sidebar-container {
@@ -93,6 +93,22 @@ export default {
     position: absolute;
   }
 }
+@keyframes slide-in{
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+@keyframes slide-out{
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(100%);
+  }
+}
 .mask {
   position: fixed;
   margin: 0;
@@ -105,12 +121,18 @@ export default {
   opacity: 0.7;
 }
 
-.fade-enter-active,
+.fade-enter-active {
+  animation: slide-in 0.5s;
+}
 .fade-leave-active {
-  transition: all linear 0.2s;
+  animation: slide-out 0.5s;
+
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  animation: slide-out 0.5s;
+  transition: opacity 0.5s;
   opacity: 0;
+
 }
 .menu {
   display: flex;

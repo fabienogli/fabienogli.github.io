@@ -94,7 +94,7 @@ export default {
     width: 100%;
     flex: 1;
     .img {
-      max-width: 100%;
+      max-width: 250px;
     }
   }
   background-color: $primaryLight;
