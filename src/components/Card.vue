@@ -3,7 +3,7 @@
     <div class="content" @click="showModal = true">
       <div class="title">{{ title }}</div>
       <div class="summary">{{summary[lang]}}</div>
-      <ressources :ressources="ressources" color="black" :hoverColor="'#035ebe'"  @click.stop/>
+      <ressources :ressources="ressources" color="black" :hoverColor="'#81C14B'"  @click.stop/>
       <logos :logos="logos" :color='"#00000"'/>
     </div>
     <project v-if="showModal" @close="showModal = false" :illustration="illustration" :title="title" :logos="logos" :ressources="ressources" :content="content" />
@@ -51,6 +51,7 @@ export default {
 
 .content {
   background-color: $accentColor;
+  border-radius: 8px;
   color: $onAccentColor;
   height: 100%;
   display: flex;

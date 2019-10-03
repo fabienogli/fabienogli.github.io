@@ -47,7 +47,7 @@ export default {
 
 }
 .content {
-  color: $onPrimary;
+  color: $onSecondary;
   font-size: $content;
   text-align: justify;
   transition: background-color 0.2s ease;

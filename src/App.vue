@@ -53,5 +53,6 @@ export default {
   text-align: center;
   display: flex;
   flex-direction: column;
+  max-width: 100%;
 }
 </style>
