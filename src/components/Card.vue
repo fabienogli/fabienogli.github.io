@@ -51,7 +51,7 @@ export default {
 
 .content {
   background-color: $accentColor;
-  color: onAccentColor;
+  color: $onAccentColor;
   height: 100%;
   display: flex;
   flex-flow: column wrap;
