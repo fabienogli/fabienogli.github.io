@@ -4,16 +4,16 @@
       <div slot="header" class="header">
         <div class="title">{{title}}</div>
       </div>
-      <div slot="body" class="body">
-        <div class="content container">
-          <img v-if="this.illustration" class="img" :src="ill">
+      <div slot="body-modal" class="body-modal">
+        <div class="content">
+          <img v-if="this.illustration" class="img" :src="ill" />
         </div>
-        <div class="content container">{{content[lang]}}</div>
+        <div class="content">{{content[lang]}}</div>
       </div>
       <div slot="footer" class="footer">
         <div class="content">
-          <ressources :ressources="ressources" :hoverColor="'#F4D35E'" :color="'#EBEBD3'"/>
-          <logos :logos="logos" :color="'#EBEBD3'"/>
+          <ressources :ressources="ressources" :hoverColor="'#F4D35E'" :color="'#EBEBD3'" />
+          <logos :logos="logos" :color="'#EBEBD3'" />
         </div>
       </div>
     </modal>
@@ -51,6 +51,7 @@ export default {
 @import "~@/styles/_variables";
 .content {
   color: $onPrimary;
+  font-size: $medium-content;
   flex: 1;
   padding: 5px;
 }
@@ -59,18 +60,12 @@ export default {
     fill: white;
   }
 }
-.body {
+.body-modal {
   display: flex;
   flex-flow: column wrap;
   width: 100%;
 }
 .img {
-  height: 450px;
-  @media (max-width: 768px) {
-    height: 225px;
-  }
-  @media (max-width: 992px) {
-    height: 180px;
-  }
+  max-height: 225px;
 }
 </style>
