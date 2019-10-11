@@ -73,6 +73,7 @@ export default {
 .about {
   margin-left: 5%;
   margin-right: 5%;
+  max-width: 100%;
 }
 
 .about-content {
@@ -85,7 +86,7 @@ export default {
   padding: 20px;
   display: flex;
   flex-flow: row wrap;
-  width: 100%;
+  max-width: 100%;
 
   @media (max-width: 768px) {
     flex-direction: column;
