@@ -1,8 +1,9 @@
 {
   "headline": {
     "en":
-      "Hello ! Welcome to my porfolio. Let me introduce myself, I am Fabien Ogli.",
-    "fr": "Bonjour et bienvenue sur mon portfolio ! Je m'appelle Fabien Ogli."
+      "Welcome to my Porfolio !<br>Name : Fabien Ogli<br>Interests : Cyber-security, Dev-Ops, Learning<br>Hobbies : Scripting my life, Movies",
+    "fr":
+      "Bienvenue sur mon Portfolio !<br>Nom: Fabien Ogli<br>Intérêts : Sécurité Informatique, DevOps, Apprendre<br>Loisir : Tout automatiser, Cinéma"
   },
   "content": {
     "en":

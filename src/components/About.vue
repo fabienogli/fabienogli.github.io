@@ -6,7 +6,7 @@
       </div>
       <div class="top container">
         <div class="name-container">
-          <div class="name">{{headline}}</div>
+          <div class="name" v-html="headline">{{headline}}</div>
         </div>
         <contact/>
       </div>
@@ -114,6 +114,7 @@ export default {
       flex-flow: column wrap;
       align-items: center;
       justify-content: center;
+      text-align: center;
       align-content: center;
       .name {
         color: $accentColor;

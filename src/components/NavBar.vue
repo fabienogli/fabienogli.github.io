@@ -1,7 +1,7 @@
 <template>
   <div class="navBar">
     <div class="brand">
-      <img class="logo" src="@/assets/logo.png">
+      <img class="logo" src="@/assets/logo.png" />
     </div>
     <nav-items-column
       :lang="this.lang"
@@ -74,6 +74,7 @@ export default {
   border-radius: 4px;
   border: none;
   padding: 4px;
+  font-size: $small-content;
 }
 .wrapper {
   flex: 1;
