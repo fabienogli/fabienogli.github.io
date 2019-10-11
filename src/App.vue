@@ -7,17 +7,16 @@
 </template>
 
 <script>
-import NavBar from "@/components/NavBar"
-import CustomFooter from "@/components/CustomFooter"
+import NavBar from "@/components/NavBar";
+import CustomFooter from "@/components/CustomFooter";
 export default {
   name: "App",
   components: {
     NavBar,
     CustomFooter
   },
-  data () {
-    return {
-    }
+  data() {
+    return {};
   },
   methods: {
     test(event) {
@@ -33,17 +32,17 @@ export default {
       //   if (event.deltaY > 0 & bottomOfWindow) {
       //     console.log("scrolling down at bottom")
       //   }
-    },
+    }
   },
   mounted() {
     console.log("mounted");
   },
   metaInfo: {
-      // if no subcomponents specify a metaInfo.title, this title will be used
-      title: 'Fabien Ogli',
-      // all titles will be injected into this template
-      titleTemplate: '%s | My Porfolio'
-    }
+    // if no subcomponents specify a metaInfo.title, this title will be used
+    title: "Fabien Ogli",
+    // all titles will be injected into this template
+    titleTemplate: "%s | My Porfolio"
+  }
 };
 </script>
 
@@ -53,5 +52,6 @@ export default {
   text-align: center;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 </style>
