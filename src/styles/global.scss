@@ -1,27 +1,27 @@
-@import '_variables.scss';
+@import "_variables.scss";
 
-@import './fontawesome/scss/fontawesome.scss';
-@import './fontawesome/scss/solid.scss';
-@import './fontawesome/scss/regular.scss';
-html, body {
+@import "./fontawesome/scss/fontawesome.scss";
+@import "./fontawesome/scss/solid.scss";
+@import "./fontawesome/scss/regular.scss";
+html,
+body {
   height: 100%;
-  max-width: 100%;
+  width: 100%;
   margin: 0;
 }
 body {
-    background-color: $primaryColor;
-    color: $onPrimary;
-    font: normal $content $main-font;
-
+  background-color: $primaryColor;
+  color: $onPrimary;
+  font: normal $content $main-font;
 }
 
-h1, h2 {
-    color: $onPrimary;
+h1,
+h2 {
+  color: $onPrimary;
 }
-
 
 div {
-	font-size: $content;
+  font-size: $content;
 }
 
 .title {
@@ -29,20 +29,20 @@ div {
 }
 
 .li-link {
-    font-size: $subtitle;
+  font-size: $subtitle;
 }
 
 .container {
-    margin: 0 auto;
-    padding: 10px;
+  margin: 0 auto;
+  padding: 10px;
 
-    @media (min-width: 768px) {
-      width: 750px;
-    }
-    @media (min-width: 992px) {
-      width: 970px;
-    }
-    @media (min-width: 1200px) {
-      width: 1170px;
-    }
+  @media (min-width: 768px) {
+    width: 750px;
   }
+  @media (min-width: 992px) {
+    width: 970px;
+  }
+  @media (min-width: 1200px) {
+    width: 1170px;
+  }
+}

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ul class="container nav-items-row">
+    <ul class="wrapper nav-items-row">
       <li class="li-link">
         <router-link class="link" active-class="active" :to="{ name: 'about' }">{{about[lang]}}</router-link>
       </li>
@@ -34,6 +34,7 @@ export default {
 .nav-items-row {
   display: flex;
   flex-flow: row wrap;
+  width: 100%;
 }
 .li-link {
   flex: 1;

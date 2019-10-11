@@ -7,19 +7,21 @@
       :lang="this.lang"
       :about="this.about"
       :projects="this.projects"
-      class="nav-items container column"
+      class="nav-items wrapper column"
     />
     <nav-items-row
       :lang="this.lang"
       :about="this.about"
       :projects="this.projects"
-      class="nav-items container row"
+      class="nav-items wrapper row"
     />
-    <div class="lang container">
-      <select class="lang" v-model="lang" @change="switchLang()">
+    <div class="lang wrapper">
+      <button v-if="this.lang=='fr'" class="lang button" @click="switchLang('en')">English</button>
+      <button v-else class="lang button" @click="switchLang('fr')">Français</button>
+      <!-- <select class="lang" v-model="lang" @change="switchLang()">
         <option value="fr">FR</option>
         <option value="en">EN</option>
-      </select>
+      </select>-->
     </div>
   </div>
 </template>
@@ -51,8 +53,9 @@ export default {
         this.$store.dispatch("lang/setLang", this.lang);
       }
     },
-    switchLang() {
-      this.$store.dispatch("lang/setLang", this.lang);
+    switchLang(lang) {
+      this.$store.dispatch("lang/setLang", lang);
+      this.lang = lang;
     },
     toggle() {}
   },
@@ -65,32 +68,31 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 @import "~@/styles/_variables";
-.navBar {
-  flex: 1;
-  flex-shrink: 0;
+.button {
+  background-color: $secondColor;
+  color: $onSecondary;
+  border-radius: 4px;
+  border: none;
+  padding: 4px;
 }
-.lang {
-  background-color: $primaryColor;
-  color: $onPrimary;
-  stroke: none;
-  .select-hidden {
-    display: none;
-    visibility: hidden;
-    padding-right: 10px;
-  }
-}
-.container {
+.wrapper {
   flex: 1;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
+}
+.lang {
+  flex: 0;
+  margin: 12px;
 }
 .nav-items {
   flex: 2;
 }
 .navBar {
+  max-width: 100%;
   display: flex;
+  flex: 1;
 
   .logo {
     height: 100px;
