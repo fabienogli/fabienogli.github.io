@@ -2,13 +2,13 @@
   <div class="about">
     <div class="presentation container">
       <div class="photo">
-        <img class="img" src="@/assets/moi.png">
+        <img class="img" src="@/assets/moi.png" />
       </div>
       <div class="top container">
         <div class="name-container">
           <div class="name" v-html="headline">{{headline}}</div>
         </div>
-        <contact/>
+        <contact />
       </div>
     </div>
     <div class="about-content container" v-html="content[lang]">{{content[lang]}}</div>
@@ -88,6 +88,8 @@ export default {
   flex-flow: row wrap;
   max-width: 100%;
 
+  background-color: rgba(0, 0, 0, 0.7);
+
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -96,11 +98,11 @@ export default {
     height: 100%;
     width: 100%;
     flex: 1;
+    opacity: 1;
     .img {
       max-width: 250px;
     }
   }
-  background-color: $primaryLight;
   border-radius: 8px;
   .top {
     flex: 1;
@@ -114,10 +116,10 @@ export default {
       flex-flow: column wrap;
       align-items: center;
       justify-content: center;
-      text-align: center;
+      text-align: left;
       align-content: center;
       .name {
-        color: $accentColor;
+        color: $sweg;
         font-size: $subtitle;
         display: flex;
       }
