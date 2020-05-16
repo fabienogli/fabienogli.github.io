@@ -52,6 +52,7 @@ export default {
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100%;
   background-image: url(../static/background.jpg);
   background-size: cover;
 }

@@ -6,12 +6,14 @@
       </div>
       <div class="top container">
         <div class="name-container">
-          <div class="name" v-html="headline">{{headline}}</div>
+          <div class="name" v-html="headline">{{ headline }}</div>
         </div>
         <contact />
       </div>
     </div>
-    <div class="about-content container" v-html="content[lang]">{{content[lang]}}</div>
+    <div class="about-content container" v-html="content[lang]">
+      {{ content[lang] }}
+    </div>
   </div>
 </template>
 
@@ -19,6 +21,7 @@
 const text = require("@/texts/about.json");
 import { clearInterval } from "timers";
 import Contact from "@/components/Contact";
+import TypeWriting from "typewriting";
 
 export default {
   name: "About",
@@ -32,12 +35,22 @@ export default {
       interval: ""
     };
   },
+  mounted() {
+    let lang = this.$store.getters["lang/get"];
+
+    const typeWriting = new TypeWriting(
+      {
+        targetElement: document.getElementsByClassName("name")[0],
+        inputString: text.headline[lang],
+        typingInterval: 130,
+        blinkInterval: "1s",
+        cursorColor: "#00fd55"
+      },
+      () => console.log("END")
+    );
+  },
   computed: {
     lang() {
-      if (this.interval !== "") {
-        window.clearInterval(this.interval);
-      }
-      this.interval = this.writeHeadline();
       return this.$store.getters["lang/get"];
     }
   },

@@ -67,11 +67,10 @@ export default {
   display: flex;
   flex-direction: column;
   max-height: 80%;
-  width: 80%;
+  max-width: 80%;
   min-height: 400px;
   padding: 20px 30px;
   background-color: $primaryColor;
-  border-radius: 23px;
   // Allow to center the modal
   position: absolute;
   top: 50%;
@@ -86,7 +85,7 @@ export default {
   width: 100%;
   min-height: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
   display: table;
   transition: opacity 0.3s ease;
 }
