@@ -11,9 +11,7 @@
         <contact />
       </div>
     </div>
-    <div class="about-content container" v-html="content[lang]">
-      {{ content[lang] }}
-    </div>
+    <div class="about-content container" v-html="content[lang]">{{ content[lang] }}</div>
   </div>
 </template>
 
@@ -87,6 +85,7 @@ export default {
   margin-left: 5%;
   margin-right: 5%;
   max-width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .about-content {
@@ -100,8 +99,6 @@ export default {
   display: flex;
   flex-flow: row wrap;
   max-width: 100%;
-
-  background-color: rgba(0, 0, 0, 0.7);
 
   @media (max-width: 768px) {
     flex-direction: column;
