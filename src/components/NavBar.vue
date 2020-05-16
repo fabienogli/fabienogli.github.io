@@ -71,7 +71,6 @@ export default {
 .button {
   background-color: $secondColor;
   color: $onSecondary;
-  border-radius: 4px;
   border: none;
   padding: 4px;
   font-size: $small-content;

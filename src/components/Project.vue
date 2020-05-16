@@ -12,7 +12,12 @@
       </div>
       <div slot="footer" class="footer">
         <div class="content">
-          <ressources :ressources="ressources" :hoverColor="'#F4D35E'" :color="'#EBEBD3'" />
+          <ressources
+            class="clickable"
+            :ressources="ressources"
+            :hoverColor="'#F4D35E'"
+            :color="'white'"
+          />
           <logos :logos="logos" :color="'#EBEBD3'" />
         </div>
       </div>
@@ -64,6 +69,9 @@ export default {
   display: flex;
   flex-flow: column wrap;
   width: 100%;
+}
+.title {
+  text-decoration: underline;
 }
 .img {
   max-height: 225px;

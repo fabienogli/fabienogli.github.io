@@ -3,32 +3,40 @@
     <div class="content" @click="showModal = true">
       <div class="title">{{ title }}</div>
       <div class="summary">{{summary[lang]}}</div>
-      <ressources :ressources="ressources" color="black" :hoverColor="'#81C14B'"  @click.stop/>
-      <logos :logos="logos" :color='"#00000"'/>
+      <ressources :ressources="ressources" color="black" :hoverColor="'#81C14B'" @click.stop />
+      <logos :logos="logos" :color="'#00000'" />
     </div>
-    <project v-if="showModal" @close="showModal = false" :illustration="illustration" :title="title" :logos="logos" :ressources="ressources" :content="content" />
+    <project
+      v-if="showModal"
+      @close="showModal = false"
+      :illustration="illustration"
+      :title="title"
+      :logos="logos"
+      :ressources="ressources"
+      :content="content"
+    />
   </div>
 </template>
 
 <script>
-import Project from '@/components/Project';
-import Ressources from '@/components/Ressources';
-import Logos from '@/components/Logos';
+import Project from "@/components/Project";
+import Ressources from "@/components/Ressources";
+import Logos from "@/components/Logos";
 
 export default {
   name: "Card",
-  components: {Project, Logos, Ressources},
+  components: { Project, Logos, Ressources },
   props: ["title", "summary", "logos", "ressources", "content", "illustration"],
   data() {
     return {
       msg: "Card Component",
-      showModal: false,
+      showModal: false
     };
   },
   computed: {
     lang() {
       return this.$store.getters["lang/get"];
-    },
+    }
   }
 };
 </script>

@@ -2,16 +2,16 @@
   <div class="about">
     <div class="presentation container">
       <div class="photo">
-        <img class="img" src="@/assets/moi.png">
+        <img class="img" src="@/assets/moi.png" />
       </div>
       <div class="top container">
         <div class="name-container">
-          <div class="name" v-html="headline">{{headline}}</div>
+          <div class="name" v-html="headline">{{ headline }}</div>
         </div>
-        <contact/>
+        <contact />
       </div>
     </div>
-    <div class="about-content container" v-html="content[lang]">{{content[lang]}}</div>
+    <div class="about-content container" v-html="content[lang]">{{ content[lang] }}</div>
   </div>
 </template>
 
@@ -19,6 +19,7 @@
 const text = require("@/texts/about.json");
 import { clearInterval } from "timers";
 import Contact from "@/components/Contact";
+import TypeWriting from "typewriting";
 
 export default {
   name: "About",
@@ -32,12 +33,22 @@ export default {
       interval: ""
     };
   },
+  mounted() {
+    let lang = this.$store.getters["lang/get"];
+
+    const typeWriting = new TypeWriting(
+      {
+        targetElement: document.getElementsByClassName("name")[0],
+        inputString: text.headline[lang],
+        typingInterval: 130,
+        blinkInterval: "1s",
+        cursorColor: "#00fd55"
+      },
+      () => console.log("END")
+    );
+  },
   computed: {
     lang() {
-      if (this.interval !== "") {
-        window.clearInterval(this.interval);
-      }
-      this.interval = this.writeHeadline();
       return this.$store.getters["lang/get"];
     }
   },
@@ -74,6 +85,7 @@ export default {
   margin-left: 5%;
   margin-right: 5%;
   max-width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .about-content {
@@ -96,11 +108,11 @@ export default {
     height: 100%;
     width: 100%;
     flex: 1;
+    opacity: 1;
     .img {
       max-width: 250px;
     }
   }
-  background-color: $primaryLight;
   border-radius: 8px;
   .top {
     flex: 1;
@@ -114,10 +126,10 @@ export default {
       flex-flow: column wrap;
       align-items: center;
       justify-content: center;
-      text-align: center;
+      text-align: left;
       align-content: center;
       .name {
-        color: $accentColor;
+        color: $sweg;
         font-size: $subtitle;
         display: flex;
       }

@@ -1,8 +1,8 @@
  <template>
   <div class="app" @mousewheel="test">
-    <nav-bar/>
-    <router-view/>
-    <custom-footer/>
+    <nav-bar />
+    <router-view />
+    <custom-footer />
   </div>
 </template>
 
@@ -48,10 +48,12 @@ export default {
 
 <style>
 .app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
   text-align: center;
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100%;
+  background-image: url(../static/background.jpg);
+  background-size: cover;
 }
 </style>
