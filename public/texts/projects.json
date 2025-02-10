@@ -1,5 +1,5 @@
-[
- {
+{
+  "coworkshop": {
     "content": {
       "en":
         "CoWorkshop is a web solution which lets users participate and share projects.",
@@ -18,7 +18,7 @@
     },
     "title": "CoWorkshop"
   },
-  {
+  "direct_chat": {
     "content": {
       "en":
         "Direct Chat is an instant chat using a peer to peer communication.",
@@ -37,7 +37,7 @@
     },
     "title": "Direct Chat"
   },
-  {
+  "safedrive": {
     "content": {
       "en":
         "The aim is to implement a peer to peer communication within a multi agent system.",
@@ -56,7 +56,7 @@
     },
     "title": "SafeDrive"
   },
-  {
+  "scrumbattle": {
     "content": {
       "en":
         "The subject was 'Gamification within team management', so we developped a Trello-like solution, where the user is allow to create cards and move them. The user is encouraged to choose a character as its avatar. A Boss is associated with each project. When the card is marked as 'Done', the Boss is hit by the users assigned on the card and looses health points. ",
@@ -78,7 +78,7 @@
     },
     "title": "Scrumbattle"
   },
-  {
+  "Tetris": {
     "content": {
       "en":
         "This is the first game I have developped in Java. It introduced me to the mvc architecture and JavaFx",
@@ -96,7 +96,7 @@
     },
     "title": "Tetris"
   },
-  {
+  "cover-letter": {
     "content": {
       "en":
         "Because writing a cover letter can be very repetitive, I build a cover letter generator to ease my applying.",
@@ -114,4 +114,4 @@
     },
     "title": "Cover Letter"
   }
-]
+}
