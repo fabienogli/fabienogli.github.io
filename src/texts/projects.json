@@ -1,4 +1,18 @@
 [
+  {
+    "content": {
+      "en": "PDL will split the files in several chunks and download it concurrently. It was an experiment to understand several standard libraries like context, http, the concept of chan and its error handling."
+    },
+    "resources": { "github" : "https://github.com/fabienogli/pdl"},
+    "title": "Parallel Downloader"
+  },
+   {
+    "content": {
+      "en": "This repository is designed to enable users to explore github profile and to summarize their github projects."
+    },
+    "resources": { "github" : "https://github.com/fabienogli/vcs-retriever"},
+    "title": "VCS Retriever"
+  },
  {
     "content": {
       "en":
@@ -10,12 +24,6 @@
     "illustration": "coworkshop.png",
     "logos": ["javascript", "ruby"],
     "resources": { "github": "https://github.com/Irindul/CoWorkshop" },
-    "summary": {
-      "en":
-        "CoWorkshop is a web solution which lets users participate and share projects.",
-      "fr":
-        "CoWorkshop est une solution web permettant de participer et de proposer des projets."
-    },
     "title": "CoWorkshop"
   },
   {
@@ -29,12 +37,6 @@
     "illustration": "direct_chat.png",
     "logos": ["javascript", "go"],
     "resources": { "github": "https://github.com/Irindul/DirectChat" },
-    "summary": {
-      "en":
-        "Direct Chat is an instant chat using a peer to peer communication.",
-      "fr":
-        "Ce projet est un messsagerie utilisant une communication pair à pair."
-    },
     "title": "Direct Chat"
   },
   {
@@ -48,12 +50,6 @@
     "illustration": "safedrive.png",
     "logos": ["java"],
     "resources": { "github": "https://github.com/Irindul/SafeDrive" },
-    "summary": {
-      "en":
-        "The aim is to implement a peer to peer communication within a multi agent system.",
-      "fr":
-        "Le but de ce projet est d’implémenter un système de communication pair à pair au sein d’un système multi-agents."
-    },
     "title": "SafeDrive"
   },
   {
@@ -70,12 +66,6 @@
       "github": "https://github.com/felixSabatie/ScrumBattle",
       "youtube": "https://www.youtube.com/watch?v=73hjQVx-ZKc&t=86s"
     },
-    "summary": {
-      "en":
-        "Winner of the first CGI's CodeJam, this project is a project management solution which incorporate video-games' code.",
-      "fr":
-        "Vainqueur de la première CodeJam de CGI, ce projet est une solution web de gestion de projet incorporant des codes de jeux-vidéos."
-    },
     "title": "Scrumbattle"
   },
   {
@@ -90,10 +80,6 @@
     "resources": {
       "github": "https://github.com/fabienogli/Tetris"
     },
-    "summary": {
-      "en": "A Tetris game.",
-      "fr": "Un jeu Tetris."
-    },
     "title": "Tetris"
   },
   {
@@ -107,10 +93,6 @@
     "logos": ["go"],
     "resources": {
       "gitlab": "https://gitlab.com/fabienogli/cover-letter-builder"
-    },
-    "summary": {
-      "en": "A cover letter generator.",
-      "fr": "Générateur de lettre de motivation."
     },
     "title": "Cover Letter"
   }
