@@ -1,0 +1,36 @@
+name: Deploy React App to GitHub Pages
+
+on:
+  push:
+    branches:
+      - release  # Change to your default branch if different
+  
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build React app
+        run: npm run build
+        env:
+          CI: false
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: master  # Branch where the site will be deployed
+          folder: dist  # Folder containing the static files
+          clean: true
