@@ -1,0 +1,117 @@
+{
+  "coworkshop": {
+    "content": {
+      "en":
+        "CoWorkshop is a web solution which lets users participate and share projects.",
+      "fr":
+        "CoWorkshop est une solution web permettant de participer et de proposer des projets."
+    },
+    "id": 1,
+    "illustration": "coworkshop.png",
+    "logos": ["javascript", "ruby"],
+    "resources": { "github": "https://github.com/Irindul/CoWorkshop" },
+    "summary": {
+      "en":
+        "CoWorkshop is a web solution which lets users participate and share projects.",
+      "fr":
+        "CoWorkshop est une solution web permettant de participer et de proposer des projets."
+    },
+    "title": "CoWorkshop"
+  },
+  "direct_chat": {
+    "content": {
+      "en":
+        "Direct Chat is an instant chat using a peer to peer communication.",
+      "fr":
+        "Ce projet est un messsagerie utilisant une communication pair à pair."
+    },
+    "id": 3,
+    "illustration": "direct_chat.png",
+    "logos": ["javascript", "go"],
+    "resources": { "github": "https://github.com/Irindul/DirectChat" },
+    "summary": {
+      "en":
+        "Direct Chat is an instant chat using a peer to peer communication.",
+      "fr":
+        "Ce projet est un messsagerie utilisant une communication pair à pair."
+    },
+    "title": "Direct Chat"
+  },
+  "safedrive": {
+    "content": {
+      "en":
+        "The aim is to implement a peer to peer communication within a multi agent system.",
+      "fr":
+        "Le but de ce projet est d’implémenter un système de communication pair à pair au sein d’un système multi-agents."
+    },
+    "id": 2,
+    "illustration": "safedrive.png",
+    "logos": ["java"],
+    "resources": { "github": "https://github.com/Irindul/SafeDrive" },
+    "summary": {
+      "en":
+        "The aim is to implement a peer to peer communication within a multi agent system.",
+      "fr":
+        "Le but de ce projet est d’implémenter un système de communication pair à pair au sein d’un système multi-agents."
+    },
+    "title": "SafeDrive"
+  },
+  "scrumbattle": {
+    "content": {
+      "en":
+        "The subject was 'Gamification within team management', so we developped a Trello-like solution, where the user is allow to create cards and move them. The user is encouraged to choose a character as its avatar. A Boss is associated with each project. When the card is marked as 'Done', the Boss is hit by the users assigned on the card and looses health points. ",
+      "fr":
+        "Le sujet était 'La Gamification au sein de la gestion d'équipe'. Nous avons donc développé un Trello Like. À chaque projet est associé un 'Boss'. Chaque utilisateur choisit son avatar. Comme pour Trello, l’utilisateur peut créer une carte et la modifier. Lorsque qu’une carte est marquée 'Done', les utilisateurs enlèvent de la vie au Boss. Le Boss n’a plus de vie lorsque le projet est fini."
+    },
+    "id": 4,
+    "illustration": "scrum_battle.png",
+    "logos": ["vue", "php"],
+    "resources": {
+      "github": "https://github.com/felixSabatie/ScrumBattle",
+      "youtube": "https://www.youtube.com/watch?v=73hjQVx-ZKc&t=86s"
+    },
+    "summary": {
+      "en":
+        "Winner of the first CGI's CodeJam, this project is a project management solution which incorporate video-games' code.",
+      "fr":
+        "Vainqueur de la première CodeJam de CGI, ce projet est une solution web de gestion de projet incorporant des codes de jeux-vidéos."
+    },
+    "title": "Scrumbattle"
+  },
+  "Tetris": {
+    "content": {
+      "en":
+        "This is the first game I have developped in Java. It introduced me to the mvc architecture and JavaFx",
+      "fr":
+        "Premier jeu que j'ai développé en Java. Grâce à ce projet, j'ai pu apprendre l'architecture MVC."
+    },
+    "id": 7,
+    "logos": ["java"],
+    "resources": {
+      "github": "https://github.com/fabienogli/Tetris"
+    },
+    "summary": {
+      "en": "A Tetris game.",
+      "fr": "Un jeu Tetris."
+    },
+    "title": "Tetris"
+  },
+  "cover-letter": {
+    "content": {
+      "en":
+        "Because writing a cover letter can be very repetitive, I build a cover letter generator to ease my applying.",
+      "fr":
+        "Parce qu'écrire une letter de motivation peut-être redondant, j'ai créer un générateur de lettre de motivation pour faciliter mes candidatures."
+    },
+    "id": 5,
+    "logos": ["go"],
+    "resources": {
+      "gitlab": "https://gitlab.com/fabienogli/cover-letter-builder"
+    },
+    "summary": {
+      "en": "A cover letter generator.",
+      "fr": "Générateur de lettre de motivation."
+    },
+    "title": "Cover Letter"
+  }
+}
